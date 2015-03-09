@@ -7,7 +7,9 @@ class User < ActiveRecord::Base
                                           :medium => "200x200>",
                                           :small => "100x100>",
                                           :thumb => "50x50>" },
-                    :default_url => "/images/:style/missing.png"
+                    :default_url => "/images/:style/missing.png",
+                    :url =>':s3_domain_url',
+                    :path => '/:class/:attachment/:id_partition/:style/:filename'
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   has_many :animes
   has_many :mangas
