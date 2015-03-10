@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150309190445) do
+ActiveRecord::Schema.define(version: 20150310204413) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,34 @@ ActiveRecord::Schema.define(version: 20150309190445) do
 
   add_index "mangas", ["user_id"], name: "index_mangas_on_user_id", using: :btree
 
+  create_table "user_animes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "anime_id"
+    t.string   "api_id"
+    t.string   "name"
+    t.string   "vintage"
+    t.string   "api_gid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "user_animes", ["anime_id"], name: "index_user_animes_on_anime_id", using: :btree
+  add_index "user_animes", ["user_id"], name: "index_user_animes_on_user_id", using: :btree
+
+  create_table "user_mangas", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "manga_id"
+    t.string   "api_id"
+    t.string   "name"
+    t.string   "vintage"
+    t.string   "api_gid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "user_mangas", ["manga_id"], name: "index_user_mangas_on_manga_id", using: :btree
+  add_index "user_mangas", ["user_id"], name: "index_user_mangas_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "user_name",                           null: false
     t.datetime "created_at",                          null: false
@@ -69,4 +97,8 @@ ActiveRecord::Schema.define(version: 20150309190445) do
 
   add_foreign_key "animes", "users"
   add_foreign_key "mangas", "users"
+  add_foreign_key "user_animes", "animes"
+  add_foreign_key "user_animes", "users"
+  add_foreign_key "user_mangas", "mangas"
+  add_foreign_key "user_mangas", "users"
 end

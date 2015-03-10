@@ -11,6 +11,6 @@ class User < ActiveRecord::Base
                     :url =>':s3_domain_url',
                     :path => '/:class/:attachment/:id_partition/:style/:filename'
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
-  has_many :animes
-  has_many :mangas
+  has_many :animes, through: :user_anime
+  has_many :mangas, through: :user_manga
 end
