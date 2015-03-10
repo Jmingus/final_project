@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+    response = Hash.from_xml open('http://www.animenewsnetwork.com/encyclopedia/reports.xml?id=155&nlist=all')
+    response
