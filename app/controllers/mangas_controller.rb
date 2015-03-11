@@ -1,9 +1,10 @@
-require 'open-uri'
 class MangasController < ApplicationController
   def index
-    query = params.fetch(:query)
-    url = "http://cdn.animenewsnetwork.com/encyclopedia/api.xml?type=manga&name=Poppoya"
-    response = Hash.from_xml @xml
-    @results = response["results"]
+    @mangas = UserManga.all
+    if params[:search]
+      @mangas = UserManga.search(params[:search]).order("created_at DESC")
+    else
+      @mangas = UserManga.all.order("created_at DESC")
+    end
   end
 end
