@@ -53,7 +53,7 @@ footer {
   box-sizing: border-box;
   height: 5%;
   padding-top: 1%;
-  padding-bottom: 1%;
+  padding-bottom: 2%;
   background-color: #303030;
   border-radius: 3px;
   box-shadow: 1px 1px 0 #F01855, 2px 2px 0 #F01855, 3px 3px 3px rgba(0, 0, 0, 0.35);
@@ -66,5 +66,36 @@ footer {
     margin-left: 40%;
     padding-top: 5px;
     margin-bottom: 0px;
+  }
+}
+.log-in{
+  margin-left: 10%;
+}
+.sign-up{
+  margin-left: 10%;
+}
+.form-groups {
+  background-color: #303030;
+  color: white;
+  width: 50%;
+  margin-left: 25%;
+  border-radius: 3px;
+  .form-submit {
+    .actions {
+      color: white;
+      margin-left: 40%;
+      .actions:hover {
+        color: #F01855;
+      }
+    }
+  }
+  .form-inputs {
+    .field {
+      margin-left: 35%;
+    }
+    .top-field {
+      margin-left: 35%;
+      padding-top: 10%;
+    }
   }
 }
