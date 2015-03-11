@@ -1,3 +1,56 @@
-// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body, html {
+  height : 100%;
+  font-family : sans-serif;
+}
+
+.parallax {
+  [class*="bg_"] {
+    position : relative;
+    height : 50vh;
+    text-indent : -9999px;
+    background-attachment : fixed;
+    background-position   : top center;
+    background-size       : cover;
+
+    &:nth-child( 2n ) {
+      box-shadow : inset 0 0 1em #111;
+    }
+  }
+
+  .bg_base_layer {
+    background-image: url('http://s9.favim.com/orig/131109/anime-art-background-books-Favim.com-1046025.jpg');
+    height: 50vh;
+    margin-top: 1%;
+    margin-left: 7%;
+    margin-right: 7%;
+    border-radius: 3px;
+  }
+
+  .bg_back_layer {
+    background-color: #303030;
+    margin-left: 7%;
+    margin-right: 7%;
+  }
+
+  .bg_break_layer {
+    box-shadow : inset 0 0 1em #111;
+
+    background-image : url('http://s9.favim.com/orig/131109/anime-art-background-books-Favim.com-1046025.jpg');
+  }
+
+  .capture_layer {
+    float: left;
+    padding : 1em;
+    margin  : -1.5em 1em 0 0;
+    text-indent : 0;
+    background : rgba( #f3f3f3, 0.75 );
+    box-shadow : 0 1px 0.125em #333;
+    margin-left: 24%;
+    width: 50%;
+    height: 60%;
+    border-radius: 3px;
+    h1{
+      margin-left: 7%;
+    }
+  }
+}
