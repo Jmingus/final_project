@@ -7,4 +7,5 @@ class MangasController < ApplicationController
       @mangas = UserManga.all.order("created_at DESC")
     end
   end
+
 end

@@ -8,15 +8,39 @@
     response = Hash.from_xml open('http://www.animenewsnetwork.com/encyclopedia/reports.xml?id=155&nlist=all').read
     response['report']['item'].each do |elem|
       if elem['type'] == 'manga'
+        advanced_info = Hash.from_xml open("http://cdn.animenewsnetwork.com/encyclopedia/api.xml?manga=#{elem['id']}").read
+        plot = []
+        extra = []
+          advanced_info['ann']['manga']['info'].each do |element|
+            if element.length >= 70
+              plot << element
+            else
+              extra << element
+            end
+          end
         UserManga.create({ name: elem['name'],
                            api_id: elem['id'],
                            api_gid: elem['gid'],
+                           img_url: advanced_info['ann']['manga']['info'][0]['src'],
+                           plot_summary: plot,
                            vintage: elem['vintage']
                          })
       elsif elem['type'] == 'TV'
+        advanced_info = Hash.from_xml open("http://cdn.animenewsnetwork.com/encyclopedia/api.xml?anime=#{elem['id']}").read
+        plot = []
+        extra = []
+        advanced_info['ann']['anime']['info'].each do |element|
+          if element.length >= 70
+            plot << element
+          else
+            extra << element
+          end
+        end
         UserAnime.create({ name: elem['name'],
                            api_id: elem['id'],
                            api_gid: elem['gid'],
+                           image: advanced_info['ann']['anime']['info'][0]['src'],
+                           plot_summary: plot,
                            vintage: elem['vintage']
                          })
       end
