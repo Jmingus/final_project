@@ -4,23 +4,25 @@
   <title>FinalProject</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<nav>
+		<ul id="nav-menu">
 		<% unless user_signed_in? %>
-		<h1><%= link_to 'Animanga', root_path %></h1>
-	  <h3><%= link_to 'Sign-Up', new_user_registration_path %></h3>
-		<h3><%= link_to 'Sign-In', new_user_session_path %></h3>
+		<li><%= link_to root_path, class: "home fa fa-home fa-2x" do %>
+		    <span>Animanga</span>
+				<% end %>
+		</li>
+	  <li><%= link_to 'Sign-Up', new_user_registration_path,class:"sign-up" %></li>
+		<li><%= link_to 'Sign-In', new_user_session_path, class: "sign-in" %></li>
 			<% else %>
-	   <h1><%= link_to 'Animanga', root_path %></h1>
-	   <h3><%= link_to 'Sign-Out', destroy_user_session_path, method: :delete %></h3>
-		 <h3 class="profile_name"><%= current_user.user_name%></h3>
-	    <h3><%= link_to 'Manga', user_mangas_path(current_user.id) %></h3>
+	   <li><%= link_to 'Animanga', root_path, class: "home" %></li>
+	   <li><%= link_to 'Sign-Out', destroy_user_session_path, method: :delete, class: "sign-out" %></li>
+	    <li><%= link_to 'Manga', user_mangas_path(current_user.id), class: "manga" %></li>
 
 			<% end %>
-
-	</nav>
+		</ul>
 <%= yield %>
 
 	<footer>

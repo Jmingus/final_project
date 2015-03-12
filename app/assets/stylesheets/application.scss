@@ -2,53 +2,52 @@
 @import 'skeleton';
 @import 'welcome';
 
-nav {
-  box-sizing: border-box;
-  height: 5%;
-  padding-top: 1%;
-  padding-bottom: 4%;
-  background-color: #303030;
-  border-radius: 3px;
-  box-shadow: 1px 1px 0 #F01855, 2px 2px 0 #F01855, 3px 3px 3px rgba(0, 0, 0, 0.35);
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-top: 5px;
-  margin-bottom: 50px;
-
-  h1,h3{
-    color: #303030;
-    margin-left: 1%;
-    font-family: Monaco, "Andale Mono";
-    display: inline;
-    font-size: 2em;
-    background: #B8ED01;
-    padding: 1px;
-    border-radius: 4px;
-    transition: all 0.3s ease-out;
-    box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.5),
-    0 2px 2px rgba(0,0,0,0.3),
-    0 0 4px 1px rgba(0,0,0,0.2);
-    text-decoration: none;
-    text-shadow: 0 1px rgba(255,255,255,0.7);
+#nav-menu{
+  li{
+    list-style: none;
+    height: 39px;
+    padding: 2px;
+    width: 40px;
   }
-
+  span{
+    width:0;
+    left:38px;
+    padding:0;
+    position:absolute;
+    overflow:hidden;
+    font-family:'Myriad Pro',Arial, Helvetica, sans-serif;
+    font-size:18px;
+    font-weight:bold;
+    letter-spacing:0.6px;
+    white-space:nowrap;
+    line-height:39px;
+    -webkit-transition: 0.25s;
+    -moz-transition: 0.25s;
+    transition: 0.25s;
+  }
   a{
-    color: #303030;
-    text-decoration: none;
+    background-color: #303030;
+    height:39px;
+    width:38px;
+    display:block;
+    position:relative;
   }
+
+  a:hover span{ width:auto; padding:0 20px;overflow:visible; }
   a:hover{
-    color: #F01855;
+    text-decoration:none;
+    -moz-box-shadow:0 0 5px #9ddff5;
+    -webkit-box-shadow:0 0 5px #9ddff5;
+    box-shadow:0 0 5px #9ddff5;
   }
-  h3{
-    font-size: 1.5em;
-    float:right;
-    padding-right: 5px;
-    margin-right: 1%;
-    margin-top: 0.3%;
+  .home {	background-position:0 0;}
+  .home:hover {	background-position:0 -39px;}
+  .home span{
+    background-color:#7da315;
+    color:#303030;
+    text-shadow:1px 1px 0 #99bf31;
   }
 }
-
 footer {
   box-sizing: border-box;
   height: 5%;
@@ -104,6 +103,14 @@ footer {
  }
 
 @media (max-width: 1200px) {
+  nav{
+    margin-left: 10%;
+    width: 80%;
+  }
+
+  footer{
+    padding-bottom: 5%;
+  }
   .parallax{
     width: 80%;
     height: 40vh;
@@ -117,4 +124,52 @@ footer {
       margin-bottom: 0px;
     }
   }
+}
+
+@media (max-width: 1000px) {
+  nav{
+    width: 72%;
+    margin-left: 14%;
+    padding-bottom: 5%;
+  }
+  footer{
+    width: 90%;
+    margin-left: 5%;
+    h6{
+      margin-left: 35%;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  nav{
+    padding-bottom: 6%;
+  }
+  .parallax {
+
+    .capture_layer {
+      padding-bottom: 6em;
+    }
+  }
+  footer{
+    h6{
+      margin-left: 33%;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  nav{
+    padding-bottom: 8%;
+  }
+  footer{
+    padding-bottom: 8%;
+    h6{
+      margin-left: 28%;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+
 }
