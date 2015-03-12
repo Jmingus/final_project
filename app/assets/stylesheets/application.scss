@@ -99,3 +99,22 @@ footer {
     }
   }
 }
+ hr{
+   margin: 0px;
+ }
+
+@media (max-width: 1200px) {
+  .parallax{
+    width: 80%;
+    height: 40vh;
+    margin-left: 10%;
+  }
+
+  .capture_layer{
+    padding-bottom: 3em;
+    height: 65%;
+    h1{
+      margin-bottom: 0px;
+    }
+  }
+}

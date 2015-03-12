@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150310204413) do
+ActiveRecord::Schema.define(version: 20150312163452) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,8 +51,10 @@ ActiveRecord::Schema.define(version: 20150310204413) do
     t.string   "name"
     t.string   "vintage"
     t.string   "api_gid"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.string   "image",        default: "Not Available"
+    t.string   "plot_summary", default: "Not Available"
   end
 
   add_index "user_animes", ["anime_id"], name: "index_user_animes_on_anime_id", using: :btree
@@ -65,8 +67,10 @@ ActiveRecord::Schema.define(version: 20150310204413) do
     t.string   "name"
     t.string   "vintage"
     t.string   "api_gid"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.string   "image",        default: "Not Available"
+    t.string   "plot_summary", default: "Not Available"
   end
 
   add_index "user_mangas", ["manga_id"], name: "index_user_mangas_on_manga_id", using: :btree
