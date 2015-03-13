@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150313213511) do
+ActiveRecord::Schema.define(version: 20150313215950) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,8 +22,6 @@ ActiveRecord::Schema.define(version: 20150313213511) do
     t.integer  "rating",       default: 1
     t.string   "image",        default: "Not Available"
     t.integer  "user_id"
-    t.boolean  "finished",     default: false
-    t.boolean  "favorite",     default: false
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.string   "api_id"
@@ -39,8 +37,6 @@ ActiveRecord::Schema.define(version: 20150313213511) do
     t.string   "image",        default: "Not Available"
     t.integer  "rating",       default: 1
     t.integer  "user_id"
-    t.boolean  "finished",     default: false
-    t.boolean  "favorite",     default: false
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.string   "api_id"
@@ -53,14 +49,10 @@ ActiveRecord::Schema.define(version: 20150313213511) do
   create_table "user_animes", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "anime_id"
-    t.string   "api_id"
-    t.string   "name"
-    t.string   "vintage"
-    t.string   "api_gid"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
-    t.string   "image",        default: "Not Available"
-    t.string   "plot_summary", default: "Not Available"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "finished",   default: false
+    t.boolean  "favorite",   default: false
   end
 
   add_index "user_animes", ["anime_id"], name: "index_user_animes_on_anime_id", using: :btree
@@ -69,14 +61,10 @@ ActiveRecord::Schema.define(version: 20150313213511) do
   create_table "user_mangas", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "manga_id"
-    t.string   "api_id"
-    t.string   "name"
-    t.string   "vintage"
-    t.string   "api_gid"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
-    t.string   "image",        default: "Not Available"
-    t.string   "plot_summary", default: "Not Available"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "finished",   default: false
+    t.boolean  "favorite",   default: false
   end
 
   add_index "user_mangas", ["manga_id"], name: "index_user_mangas_on_manga_id", using: :btree
