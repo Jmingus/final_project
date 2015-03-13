@@ -1,20 +1,20 @@
 class MangasController < ApplicationController
   before_action :set_manga, only: [:deletecollection]
   def index
-    @mangas = UserManga.all
+    @mangas = Manga.all
     if params[:search]
-      @mangas = UserManga.search(params[:search]).order("created_at DESC").limit(50)
+      @mangas = Manga.search(params[:search]).order("created_at DESC").limit(50)
     else
-      @mangas = UserManga.all.order("created_at DESC").limit(50)
+      @mangas = Manga.all.order("created_at DESC").limit(50)
     end
   end
 
   def addcollection
     user_id = current_user.id
-    manga = UserManga.find(params[:id])
-    if Manga.create(title: manga.name, plot_summary: manga.plot_summary, image: manga.image)
+    if UserManga.create(user_id: user_id, manga_id: params[:id])
+        redirect_to root_path, flash: {notice: 'Manga added to collection'}
     else
-        redirect_to root_path, flash: {notice: ''}
+        redirect_to root_path, flash: {notice: 'Manga failed to be added'}
     end
   end
 
