@@ -8,38 +8,37 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<nav>
 		<ul id="nav-menu">
 		<% unless user_signed_in? %>
-			<li><%= link_to root_path, class: "home fa fa-home fa-3x fa-fw" do %>
-			    <span>Animanga</span>
+			<li><%= link_to root_path, class: "home fa fa-home fa-2x fa-fw" do %>
+			    <span>Home</span>
 					<% end %>
 			</li>
-		  <li><%= link_to new_user_registration_path, class:"sign-up fa fa-plus-circle fa-3x fa-fw" do %>
+		  <li><%= link_to new_user_registration_path, class:"sign-up fa fa-plus-circle fa-2x fa-fw" do %>
 					<span>Sign-Up</span>
 				  <% end %>
 		  </li>
-			<li><%= link_to new_user_session_path, class: "sign-in fa fa-sign-in fa-3x fa-fw" do %>
+			<li><%= link_to new_user_session_path, class: "sign-in fa fa-sign-in fa-2x fa-fw" do %>
 			    <span>Sign-In</span>
 			    <% end %>
 			</li>
 		<% else %>
-		 <li><%= link_to root_path, class: "home fa fa-home fa-3x fa-fw" do %>
-		        <span>Animanga</span>
+		 <li><%= link_to root_path, class: "home fa fa-home fa-2x fa-fw" do %>
+		        <span>Home</span>
 		      <% end %>
-	   <li><%= link_to destroy_user_session_path, method: :delete, class: "sign-out fa fa-sign-out fa-3x fa-fw" do %>
+	   <li><%= link_to destroy_user_session_path, method: :delete, class: "sign-out fa fa-sign-out fa-2x fa-fw" do %>
 	          <span>Sign-Out</span>
 			   <% end %>
 	   </li>
-	   <li><%= link_to user_mangas_path(current_user.id), class: "manga fa fa-book fa-3x fa-fw" do %>
+	   <li><%= link_to user_mangas_path(current_user.id), class: "manga fa fa-book fa-2x fa-fw" do %>
 						<span>Manga</span>
 			   <% end %>
 	   </li>
 			<% end %>
 		</ul>
+	</nav>
 <%= yield %>
-
-	<footer>
-				<h6>Created by Jacob Mingus</h6>
-	</footer>
+<br class="white-space">
 </body>
 </html>

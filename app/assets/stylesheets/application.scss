@@ -1,20 +1,26 @@
 @import 'normalize';
 @import 'skeleton';
 @import 'welcome';
-
+@import 'mangas';
+.white-space{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 #nav-menu{
-  display:inline;
+  margin-bottom: 0px;
+
   li{
     list-style: none;
     height: 50px;
     padding: 2px;
+    margin-bottom: 0px;
   }
   .fa{
     color: white;
   }
   span{
     width:0;
-    left:50px;
+    left:63px;
     padding:0;
     position:absolute;
     overflow:hidden;
@@ -23,15 +29,15 @@
     font-weight:bold;
     letter-spacing:0.6px;
     white-space:nowrap;
-    line-height:50px;
+    line-height:30px;
     -webkit-transition: 0.25s;
     -moz-transition: 0.25s;
     transition: 0.25s;
   }
   a{
     background-color: #303030;
-    height: 50px;
-    width: 50px;
+    height: 30px;
+    width: 63px;
     display:block;
     position:relative;
     text-decoration: none;
