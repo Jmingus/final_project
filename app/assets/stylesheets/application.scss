@@ -3,15 +3,18 @@
 @import 'welcome';
 
 #nav-menu{
+  display:inline;
   li{
     list-style: none;
-    height: 39px;
+    height: 50px;
     padding: 2px;
-    width: 40px;
+  }
+  .fa{
+    color: white;
   }
   span{
     width:0;
-    left:38px;
+    left:50px;
     padding:0;
     position:absolute;
     overflow:hidden;
@@ -20,17 +23,19 @@
     font-weight:bold;
     letter-spacing:0.6px;
     white-space:nowrap;
-    line-height:39px;
+    line-height:50px;
     -webkit-transition: 0.25s;
     -moz-transition: 0.25s;
     transition: 0.25s;
   }
   a{
     background-color: #303030;
-    height:39px;
-    width:38px;
+    height: 50px;
+    width: 50px;
     display:block;
     position:relative;
+    text-decoration: none;
+    margin-left: 0px;
   }
 
   a:hover span{ width:auto; padding:0 20px;overflow:visible; }
@@ -43,9 +48,38 @@
   .home {	background-position:0 0;}
   .home:hover {	background-position:0 -39px;}
   .home span{
-    background-color:#7da315;
+    background-color:#43B26A;
     color:#303030;
-    text-shadow:1px 1px 0 #99bf31;
+    text-shadow:1px 1px 0 #73726D;
+  }
+  .sign-up {	background-position:0 0;}
+  .sign-up:hover {	background-position:0 -39px;}
+  .sign-up span{
+    background-color: #937DFF;
+    color:#303030;
+    text-shadow:1px 1px 0 #73726D;
+  }
+  .sign-in {	background-position:0 0;}
+  .sign-in:hover {	background-position:0 -39px;}
+  .sign-in span{
+    background-color: #FF4B3D;
+    color:#303030;
+    text-shadow:1px 1px 0 #73726D;
+  }
+
+  .sign-out {	background-position:0 0;}
+  .sign-out:hover {	background-position:0 -39px;}
+  .sign-out span{
+    background-color: #55C3DC;
+    color:#303030;
+    text-shadow:1px 1px 0 #73726D;
+  }
+  .manga {	background-position:0 0;}
+  .manga:hover {	background-position:0 -39px;}
+  .manga span{
+    background-color: #E7F3EF;
+    color:#303030;
+    text-shadow:1px 1px 0 #73726D;
   }
 }
 footer {
@@ -103,10 +137,6 @@ footer {
  }
 
 @media (max-width: 1200px) {
-  nav{
-    margin-left: 10%;
-    width: 80%;
-  }
 
   footer{
     padding-bottom: 5%;
@@ -127,11 +157,6 @@ footer {
 }
 
 @media (max-width: 1000px) {
-  nav{
-    width: 72%;
-    margin-left: 14%;
-    padding-bottom: 5%;
-  }
   footer{
     width: 90%;
     margin-left: 5%;
@@ -142,9 +167,6 @@ footer {
 }
 
 @media (max-width: 750px) {
-  nav{
-    padding-bottom: 6%;
-  }
   .parallax {
 
     .capture_layer {
@@ -159,9 +181,7 @@ footer {
 }
 
 @media (max-width: 550px) {
-  nav{
-    padding-bottom: 8%;
-  }
+
   footer{
     padding-bottom: 8%;
     h6{

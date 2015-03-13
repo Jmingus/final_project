@@ -10,17 +10,30 @@
 <body>
 		<ul id="nav-menu">
 		<% unless user_signed_in? %>
-		<li><%= link_to root_path, class: "home fa fa-home fa-2x" do %>
-		    <span>Animanga</span>
-				<% end %>
-		</li>
-	  <li><%= link_to 'Sign-Up', new_user_registration_path,class:"sign-up" %></li>
-		<li><%= link_to 'Sign-In', new_user_session_path, class: "sign-in" %></li>
-			<% else %>
-	   <li><%= link_to 'Animanga', root_path, class: "home" %></li>
-	   <li><%= link_to 'Sign-Out', destroy_user_session_path, method: :delete, class: "sign-out" %></li>
-	    <li><%= link_to 'Manga', user_mangas_path(current_user.id), class: "manga" %></li>
-
+			<li><%= link_to root_path, class: "home fa fa-home fa-3x fa-fw" do %>
+			    <span>Animanga</span>
+					<% end %>
+			</li>
+		  <li><%= link_to new_user_registration_path, class:"sign-up fa fa-plus-circle fa-3x fa-fw" do %>
+					<span>Sign-Up</span>
+				  <% end %>
+		  </li>
+			<li><%= link_to new_user_session_path, class: "sign-in fa fa-sign-in fa-3x fa-fw" do %>
+			    <span>Sign-In</span>
+			    <% end %>
+			</li>
+		<% else %>
+		 <li><%= link_to root_path, class: "home fa fa-home fa-3x fa-fw" do %>
+		        <span>Animanga</span>
+		      <% end %>
+	   <li><%= link_to destroy_user_session_path, method: :delete, class: "sign-out fa fa-sign-out fa-3x fa-fw" do %>
+	          <span>Sign-Out</span>
+			   <% end %>
+	   </li>
+	   <li><%= link_to user_mangas_path(current_user.id), class: "manga fa fa-book fa-3x fa-fw" do %>
+						<span>Manga</span>
+			   <% end %>
+	   </li>
 			<% end %>
 		</ul>
 <%= yield %>
