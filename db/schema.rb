@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150312163452) do
+ActiveRecord::Schema.define(version: 20150313213511) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "animes", force: :cascade do |t|
-    t.string   "title",                                  null: false
+    t.string   "name",                                   null: false
     t.string   "plot_summary", default: "Not Available"
     t.integer  "rating",       default: 1
     t.string   "image",        default: "Not Available"
@@ -26,12 +26,15 @@ ActiveRecord::Schema.define(version: 20150312163452) do
     t.boolean  "favorite",     default: false
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
+    t.string   "api_id"
+    t.string   "api_gid"
+    t.string   "vintage",      default: "Not Available"
   end
 
   add_index "animes", ["user_id"], name: "index_animes_on_user_id", using: :btree
 
   create_table "mangas", force: :cascade do |t|
-    t.string   "title",                                  null: false
+    t.string   "name",                                   null: false
     t.string   "plot_summary", default: "Not Available"
     t.string   "image",        default: "Not Available"
     t.integer  "rating",       default: 1
@@ -40,6 +43,9 @@ ActiveRecord::Schema.define(version: 20150312163452) do
     t.boolean  "favorite",     default: false
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
+    t.string   "api_id"
+    t.string   "api_gid"
+    t.string   "vintage",      default: "Not Available"
   end
 
   add_index "mangas", ["user_id"], name: "index_mangas_on_user_id", using: :btree

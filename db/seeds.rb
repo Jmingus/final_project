@@ -9,7 +9,7 @@
     response['report']['item'].each do |elem|
       begin
         if elem['type'] == 'manga'
-          if UserManga.find_by(api_id: elem['id'])
+          if Manga.find_by(api_id: elem['id'])
             next
           else
               advanced_info = Hash.from_xml open("http://cdn.animenewsnetwork.com/encyclopedia/api.xml?manga=#{elem['id']}").read
@@ -27,7 +27,7 @@
               end
             end
           end
-          UserManga.create({ name: elem['name'],
+          Manga.create({ name: elem['name'],
                              api_id: elem['id'],
                              api_gid: elem['gid'],
                              image: image_url,
@@ -35,7 +35,7 @@
                              vintage: elem['vintage']
                            })
       elsif elem['type'] == 'TV'
-        if UserAnime.find_by(api_id: elem['id'])
+        if Anime.find_by(api_id: elem['id'])
           next
         else
             advanced_info = Hash.from_xml open("http://cdn.animenewsnetwork.com/encyclopedia/api.xml?anime=#{elem['id']}").read
@@ -53,7 +53,7 @@
             end
           end
         end
-        UserAnime.create({ name: elem['name'],
+        Anime.create({ name: elem['name'],
                            api_id: elem['id'],
                            api_gid: elem['gid'],
                            image: image_url,

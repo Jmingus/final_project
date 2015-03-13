@@ -4,7 +4,11 @@ Rails.application.routes.draw do
     resources :animes
   end
   resources :users do
-    resources :mangas
+    resources :mangas do
+      member do
+        post 'addcollection'
+      end
+    end
   end
   root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
