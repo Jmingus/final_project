@@ -7,38 +7,70 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <%= csrf_meta_tags %>
 </head>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
 <body>
 	<nav>
-		<ul id="nav-menu">
-		<% unless user_signed_in? %>
-			<li><%= link_to root_path, class: "home fa fa-home fa-2x fa-fw" do %>
-			    <span>Home</span>
-					<% end %>
-			</li>
-		  <li><%= link_to new_user_registration_path, class:"sign-up fa fa-plus-circle fa-2x fa-fw" do %>
-					<span>Sign-Up</span>
-				  <% end %>
-		  </li>
-			<li><%= link_to new_user_session_path, class: "sign-in fa fa-sign-in fa-2x fa-fw" do %>
-			    <span>Sign-In</span>
-			    <% end %>
-			</li>
-		<% else %>
-		 <li><%= link_to root_path, class: "home fa fa-home fa-2x fa-fw" do %>
-		        <span>Home</span>
-		      <% end %>
-	   <li><%= link_to destroy_user_session_path, method: :delete, class: "sign-out fa fa-sign-out fa-2x fa-fw" do %>
-	          <span>Sign-Out</span>
-			   <% end %>
-	   </li>
-	   <li><%= link_to user_mangas_path(current_user.id), class: "manga fa fa-book fa-2x fa-fw" do %>
-						<span>Manga</span>
-			   <% end %>
-	   </li>
-			<% end %>
-		</ul>
+	  <div class="black-line"></div>
+		<div class="container">
+			<div class="row">
+				<div class="four columns">
+					<div class="left-logo-area">
+					  <div class="left-logo">
+						  <h1 class="left-logo-animanga">Animanga</h1>
+					  </div>
+					</div>
+				  <div class="black-line-divider"></div>
+					<div class="notice-area">
+					  <p class="notice"><%= notice %></p>
+					  <p class="alert"><%= alert %></p>
+					</div>
+				</div>
+				<div class="eight columns">
+					<div class="right-logo-area">
+						<div class="right-logo">
+							<ul class="right-logo-ul">
+							  <li class="right-logo-anime">Anime </li>
+							  <li class="right-logo-and">&</li>
+							  <li class="right-logo-manga">Manga</li>
+							</ul>
+						</div>
+						<ul id="nav-menu">
+						<% unless user_signed_in? %>
+							<li class="nav-link"><%= link_to root_path, class: "home fa fa-home fa-2x fa-fw" do %>
+							    <span>Home</span>
+									<% end %>
+							</li>
+						  <li class="nav-link"><%= link_to new_user_registration_path, class:"sign-up fa fa-plus-circle fa-2x fa-fw" do %>
+									<span>Sign-Up</span>
+								  <% end %>
+						  </li>
+							<li class="nav-link"><%= link_to new_user_session_path, class: "sign-in fa fa-sign-in fa-2x fa-fw" do %>
+							    <span>Sign-In</span>
+							    <% end %>
+							</li>
+						<% else %>
+						 <li class="nav-link"><%= link_to root_path, class: "home fa fa-home fa-2x fa-fw" do %>
+						        <span>Home</span>
+						      <% end %>
+						 </li>
+					   <li class="nav-link"><%= link_to user_mangas_path(current_user.id), class: "manga fa fa-book fa-2x fa-fw" do %>
+										<span>Manga</span>
+							    <% end %>
+					   </li>
+						<li class="nav-link"><%= link_to user_animes_path(current_user.id), class: "anime fa fa-video-camera fa-2x fa-fw" do %>
+						        <span>Anime</span>
+									<% end %>
+						</li>
+						 <li class="nav-link"><%= link_to destroy_user_session_path, method: :delete, class: "sign-out fa fa-sign-out fa-2x fa-fw" do %>
+						       <span>Sign-Out</span>
+						     <% end %>
+						 </li>
+							<% end %>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="main-content-divider"></div>
+		</div>
 	</nav>
 <%= yield %>
 <br class="white-space">

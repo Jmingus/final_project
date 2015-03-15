@@ -2,90 +2,212 @@
 @import 'skeleton';
 @import 'welcome';
 @import 'mangas';
+@import url(http://fonts.googleapis.com/css?family=Lora:700italic|Gravitas+One|Titillium+Web);
 .white-space{
   margin-top: 10px;
   margin-bottom: 10px;
 }
-#nav-menu{
-  margin-bottom: 0px;
-
-  li{
-    list-style: none;
-    height: 50px;
-    padding: 2px;
+.black-line{
+  width: 100%;
+  height: 10px;
+  background-color: #00001F;
+}
+.container{
+  margin-left: 15%;
+  margin-right: 15%;
+  .main-content-divider{
+    border-bottom: 3px dashed rgba(0, 0, 0, 1);
+  }
+}
+.black-line-divider{
+  margin-top: 10px;
+  height: 10px;
+  background-color: #00001F;
+}
+.notice-area{
+  height: 30px;
+  .notice{
     margin-bottom: 0px;
   }
-  .fa{
-    color: white;
+  .alert{
+    margin-bottom: 0px;
   }
-  span{
-    width:0;
-    left:63px;
-    padding:0;
-    position:absolute;
-    overflow:hidden;
-    font-family:'Myriad Pro',Arial, Helvetica, sans-serif;
-    font-size:18px;
-    font-weight:bold;
-    letter-spacing:0.6px;
-    white-space:nowrap;
-    line-height:30px;
-    -webkit-transition: 0.25s;
-    -moz-transition: 0.25s;
-    transition: 0.25s;
-  }
-  a{
-    background-color: #303030;
-    height: 30px;
-    width: 63px;
-    display:block;
-    position:relative;
-    text-decoration: none;
-    margin-left: 0px;
-  }
+}
+.left-logo-area{
+  height: 15%;
+  .left-logo{
+    height: 100px;
+    margin-top: 10px;
+    background-color: #00001F;
+    .left-logo-animanga{
+      font-family: 'Gravitas One', cursive;
+      font-weight: bold;
+      font-size: 40px;
+      color: #FFFFFF;
+      padding-left: 5px;
+      padding-top: 30px;
+      padding-bottom: 20px;
+    }
 
-  a:hover span{ width:auto; padding:0 20px;overflow:visible; }
-  a:hover{
-    text-decoration:none;
-    -moz-box-shadow:0 0 5px #9ddff5;
-    -webkit-box-shadow:0 0 5px #9ddff5;
-    box-shadow:0 0 5px #9ddff5;
   }
-  .home {	background-position:0 0;}
-  .home:hover {	background-position:0 -39px;}
-  .home span{
-    background-color:#43B26A;
-    color:#303030;
-    text-shadow:1px 1px 0 #73726D;
-  }
-  .sign-up {	background-position:0 0;}
-  .sign-up:hover {	background-position:0 -39px;}
-  .sign-up span{
-    background-color: #937DFF;
-    color:#303030;
-    text-shadow:1px 1px 0 #73726D;
-  }
-  .sign-in {	background-position:0 0;}
-  .sign-in:hover {	background-position:0 -39px;}
-  .sign-in span{
-    background-color: #FF4B3D;
-    color:#303030;
-    text-shadow:1px 1px 0 #73726D;
-  }
+}
 
-  .sign-out {	background-position:0 0;}
-  .sign-out:hover {	background-position:0 -39px;}
-  .sign-out span{
-    background-color: #55C3DC;
-    color:#303030;
-    text-shadow:1px 1px 0 #73726D;
+.right-logo-area {
+  height: 20%;
+  .right-logo{
+    height: 100px;
+    margin-top: 10px;
+    background-color: #00001F;
+    .right-logo-ul{
+      list-style: none;
+      padding-left: 40px;
+      .right-logo-anime{
+        display: inline;
+        color: #ED1C24;
+        font-size: 50px;
+        font-family: 'Lora', serif;
+      }
+      .right-logo-and{
+        display: inline;
+        font-size: 58px;
+        width: 50px;
+        color: #FFFFFF;
+        font-family: 'Titillium Web', sans-serif;
+      }
+      .right-logo-manga{
+        padding-left: 10px;
+        display: inline;
+        font-size: 50px;
+        color: #FFFFFF;
+        font-style: italic;
+        font-family: 'Titillium Web', sans-serif;
+      }
+    }
   }
-  .manga {	background-position:0 0;}
-  .manga:hover {	background-position:0 -39px;}
-  .manga span{
-    background-color: #E7F3EF;
-    color:#303030;
-    text-shadow:1px 1px 0 #73726D;
+  #nav-menu {
+    margin-top: 5px;
+    margin-bottom: 0px;
+
+    .nav-link {
+      margin-left: 2.5%;
+      margin-right: 15%;
+      display: inline;
+      list-style: none;
+      margin-bottom: 0px;
+    }
+    .fa {
+      color: #FFFFFF;
+    }
+    span {
+      width: 0;
+      left: 63px;
+      padding: 0;
+      position: absolute;
+      overflow: hidden;
+      font-family: 'Myriad Pro', Arial, Helvetica, sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 0.6px;
+      white-space: nowrap;
+      line-height: 30px;
+      -webkit-transition: 0.25s;
+      -moz-transition: 0.25s;
+      transition: 0.25s;
+    }
+    a {
+      background-color: #00001F;
+      height: 30px;
+      width: 63px;
+      display: block;
+      position: relative;
+      text-decoration: none;
+      margin-left: 0px;
+    }
+
+    a:hover span {
+      width: auto;
+      padding: 0 20px;
+      overflow: visible;
+    }
+    a:hover {
+      text-decoration: none;
+      -moz-box-shadow: 0 0 5px #9ddff5;
+      -webkit-box-shadow: 0 0 5px #9ddff5;
+      box-shadow: 0 0 5px #9ddff5;
+    }
+    .home {
+      display: inline-block;
+      background-position: 0 0;
+    }
+    .home:hover {
+      background-position: 0 -39px;
+    }
+    .home span {
+      background-color: #43B26A;
+      color: #00001F;
+      text-shadow: 1px 1px 0 #FFFFFF;
+    }
+    .sign-up {
+      display: inline-block;
+      background-position: 0 0;
+    }
+    .sign-up:hover {
+      background-position: 0 -39px;
+    }
+    .sign-up span {
+      background-color: #937DFF;
+      color: #00001F;
+      text-shadow: 1px 1px 0 #FFFFFF;
+    }
+    .sign-in {
+      display: inline-block;
+      background-position: 0 0;
+    }
+    .sign-in:hover {
+      background-position: 0 -39px;
+    }
+    .sign-in span {
+      background-color: #FF4B3D;
+      color: #00001F;
+      text-shadow: 1px 1px 0 #FFFFFF;
+    }
+
+    .sign-out {
+      display: inline-block;
+      background-position: 0 0;
+    }
+    .sign-out:hover {
+      background-position: 0 -39px;
+    }
+    .sign-out span {
+      background-color: #55C3DC;
+      color: #00001F;
+      text-shadow: 1px 1px 0 #FFFFFF;
+    }
+    .manga {
+      display: inline-block;
+      background-position: 0 0;
+    }
+    .manga:hover {
+      background-position: 0 -39px;
+    }
+    .manga span {
+      background-color: #F5A8AA;
+      color: #00001F;
+      text-shadow: 1px 1px 0 #FFFFFF;
+    }
+    .anime {
+      display: inline-block;
+      background-position: 0 0;
+    }
+    .anime:hover {
+      background-position: 0 -39px;
+    }
+    .anime span {
+      background-color: #DEC6EC;
+      color: #00001F;
+      text-shadow: 1px 1px 0 #FFFFFF;
+    }
   }
 }
 footer {
