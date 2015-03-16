@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :users do
-    resources :animes
+    resources :animes do
+      member do
+        post 'addcollection'
+      end
+    end
   end
   resources :users do
     resources :mangas do
