@@ -21,11 +21,9 @@
 	    <td><%= image_tag elem.image %></td>
 			<% end %>
 	    <td><%= elem.name %></td>
-	    <td><%= link_to '', addcollection_user_anime_path(current_user.id, elem.id) , class: 'fa fa-plus-square-o', method: :post %></td>
+	    <td><%= link_to '', addcollection_user_anime_path(current_user.id, elem.id) , class: 'fa fa-plus-square-o', method: :post, data: { disable_with: " Added!" } %></td>
 	  </tr>
 	  <% end %>
 	  </tbody>
 	</table>
-  <%= paginate @animes %>
-  <%= page_entries_info @animes %>
 </div>

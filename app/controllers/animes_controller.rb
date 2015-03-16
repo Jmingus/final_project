@@ -1,11 +1,11 @@
 class AnimesController < ApplicationController
   before_action :set_anime, only: [:deletecollection]
   def index
-    @animes = Anime.all.page params[:page]
+    @animes = (Anime.all - current_user.animes)
     if params[:search]
-      @animes = Anime.search(params[:search]).order("created_at DESC").page params[:page]
+      @animes = Anime.search(params[:search]).order("created_at DESC") - current_user.animes
     else
-      @animes = Anime.all.order("created_at DESC").page params[:page]
+      @animes = Anime.all.order("created_at DESC") - current_user.animes
     end
   end
 

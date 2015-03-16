@@ -1,4 +1,5 @@
 class Manga < ActiveRecord::Base
+  has_many :user_mangas
   has_many :users, through: :user_mangas
   paginates_per 7
   def self.search(search)
