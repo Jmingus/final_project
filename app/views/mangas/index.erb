@@ -13,7 +13,7 @@
 	  </tr>
 	  </thead>
 	  <tbody>
-	  <% @mangas.each do |elem| %>
+	  <% @paginatable_mangas.each do |elem| %>
 	  <tr class="collection-add">
 		  <% if elem.image == 'Not Available' %>
 			  <td><%= elem.image %></td>
@@ -26,6 +26,6 @@
 	  <% end %>
 	  </tbody>
 	</table>
-	<%= paginate @mangas %>
-	<%= page_entries_info @mangas %>
+	<%= paginate @paginatable_mangas %>
+	<%= page_entries_info @paginatable_mangas %>
 </div>

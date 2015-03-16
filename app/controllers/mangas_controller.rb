@@ -1,11 +1,14 @@
 class MangasController < ApplicationController
   before_action :set_manga, only: [:deletecollection]
   def index
-    @mangas = Manga.all.page params[:page]
+    @mangas = (Manga.all - current_user.mangas)
+    @paginatable_mangas = Kaminari.paginate_array(@mangas).page(params[:page]).per(7)
     if params[:search]
-      @mangas = Manga.search(params[:search]).order("created_at DESC").page params[:page]
+      @mangas = Manga.search(params[:search]).order("created_at DESC") - current_user.mangas
+      @paginatable_mangas = Kaminari.paginate_array(@mangas).page(params[:page]).per(7)
     else
-      @mangas = Manga.all.order("created_at DESC").page params[:page]
+      @mangas = Manga.all.order("created_at DESC") - current_user.mangas
+      @paginatable_mangas = Kaminari.paginate_array(@mangas).page(params[:page]).per(7)
     end
   end
 
