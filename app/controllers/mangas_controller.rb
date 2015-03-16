@@ -12,9 +12,9 @@ class MangasController < ApplicationController
   def addcollection
     user_id = current_user.id
     if UserManga.create(user_id: user_id, manga_id: params[:id])
-        redirect_to root_path, flash: {notice: 'Manga added to collection'}
+        redirect_to user_mangas_path, flash: {notice: 'Manga added to collection'}
     else
-        redirect_to root_path, flash: {notice: 'Manga failed to be added'}
+        redirect_to user_mangas_path, flash: {notice: 'Manga failed to be added'}
     end
   end
 

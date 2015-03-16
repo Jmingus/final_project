@@ -1,27 +1,29 @@
-<%= form_tag(user_mangas_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "Search For Manga" %>
-<%= submit_tag "Search" %>
-<% end %>
+<div class="container">
+	<%= form_tag(user_mangas_path, :method => "get", id: "search-form") do %>
+	<%= text_field_tag :search, params[:search], placeholder: "Search For Manga" %>
+	<%= submit_tag "Search" %>
+	<% end %>
 
-<table class="u-full-width">
-  <thead>
-  <tr>
-    <th>Image</th>
-    <th>Name</th>
-	  <th>Add to Collection</th>
-  </tr>
-  </thead>
-  <tbody>
-  <% @mangas.each do |elem| %>
-  <tr class="collection-add">
-	  <% if elem.image == 'Not Available' %>
-		  <td><%= elem.image %></td>
-		<% else %>
-    <td><%= image_tag elem.image %></td>
-		<% end %>
-    <td><%= elem.name %></td>
-    <td><%= link_to '', addcollection_user_manga_path(current_user.id, elem.id) , class: 'fa fa-plus-square-o', method: :post %></td>
-  </tr>
-  <% end %>
-  </tbody>
-</table>
+	<table class="u-full-width">
+	  <thead>
+	  <tr>
+	    <th>Image</th>
+	    <th>Name</th>
+		  <th>Add to Collection</th>
+	  </tr>
+	  </thead>
+	  <tbody>
+	  <% @mangas.each do |elem| %>
+	  <tr class="collection-add">
+		  <% if elem.image == 'Not Available' %>
+			  <td><%= elem.image %></td>
+			<% else %>
+	    <td><%= image_tag elem.image %></td>
+			<% end %>
+	    <td><%= elem.name %></td>
+	    <td><%= link_to '', addcollection_user_manga_path(current_user.id, elem.id) , class: 'fa fa-plus-square-o', method: :post %></td>
+	  </tr>
+	  <% end %>
+	  </tbody>
+	</table>
+</div>

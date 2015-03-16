@@ -1,5 +1,30 @@
-body, html {
-  height : 100%;
-  font-family : sans-serif;
+.description{
+  .description-title {
+    background-color: #00001F;
+    height: 75px;
+    margin-top: 10px;
+    font-size: 50px;
+    color: #FFFFFF;
+    padding-left: 27px;
+    font-family: 'Lora', serif;
+  }
+  .description-sub-title{
+    color: #ED1C24;
+    font-family:'Lora', serif;
+    font-size: 35px;
+    padding-top: 10px;
+  }
+  .description-content{
+    color: #66685F;
+    font-family: 'Titillium Web', sans-serif;
+  }
 }
 
+.site-image{
+  background-image: url('http://s9.favim.com/orig/131109/anime-art-background-books-Favim.com-1046025.jpg');
+  height: 75vh;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 1px 1px 0 #00001F, 2px 2px 0 #00001F, 3px 3px 3px rgba(0, 0, 0, 0.35);
+
+}
