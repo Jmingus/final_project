@@ -1,11 +1,11 @@
 class AnimesController < ApplicationController
   before_action :set_anime, only: [:deletecollection]
   def index
-    @animes = Anime.all
+    @animes = Anime.all.page params[:page]
     if params[:search]
-      @animes = Anime.search(params[:search]).order("created_at DESC").limit(50)
+      @animes = Anime.search(params[:search]).order("created_at DESC").page params[:page]
     else
-      @animes = Anime.all.order("created_at DESC").limit(50)
+      @animes = Anime.all.order("created_at DESC").page params[:page]
     end
   end
 
@@ -31,4 +31,3 @@ class AnimesController < ApplicationController
     params.require(:anime).permit(:title,:plot_summary,:image)
   end
 end
-

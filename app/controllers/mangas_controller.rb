@@ -1,11 +1,11 @@
 class MangasController < ApplicationController
   before_action :set_manga, only: [:deletecollection]
   def index
-    @mangas = Manga.all
+    @mangas = Manga.all.page params[:page]
     if params[:search]
-      @mangas = Manga.search(params[:search]).order("created_at DESC").limit(50)
+      @mangas = Manga.search(params[:search]).order("created_at DESC").page params[:page]
     else
-      @mangas = Manga.all.order("created_at DESC").limit(50)
+      @mangas = Manga.all.order("created_at DESC").page params[:page]
     end
   end
 
