@@ -11,7 +11,9 @@ class MangasController < ApplicationController
       @paginatable_mangas = Kaminari.paginate_array(@mangas).page(params[:page]).per(7)
     end
   end
-
+  def collection
+    @user = current_user
+  end
   def addcollection
     user_id = current_user.id
     if UserManga.create(user_id: user_id, manga_id: params[:id])

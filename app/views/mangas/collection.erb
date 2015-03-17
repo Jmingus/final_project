@@ -1,0 +1,16 @@
+<div class="container">
+		<% @user.animes.each_slice(6) do |elem| %>
+		<div class="row">
+			<% elem.each do |element| %>
+      <div class="two columns">
+					<% if element.image == 'Not Available' %>
+						<%= element.image %>
+					<% else %>
+						<div class="image-container"><%= image_tag element.image, class: 'image' %></div>
+					<% end %>
+					<h6>Name - <%= element.name %></h6>
+      </div>
+			<% end %>
+		</div>
+		<% end %>
+</div>

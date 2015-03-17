@@ -14,6 +14,9 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  get 'mangas/collection' => 'mangas#collection'
+  get 'animes/collection' => 'animes#collection'
   root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
