@@ -1,16 +1,27 @@
 <div class="container">
-		<% @user.animes.each_slice(6) do |elem| %>
+		<% @user.animes.each_slice(6).with_index do |elem, row| %>
 		<div class="row">
-			<% elem.each do |element| %>
+			<% elem.each_with_index do |element, column| %>
       <div class="two columns">
 					<% if element.image == 'Not Available' %>
 						<%= element.image %>
 					<% else %>
-						<div class="image-container"><%= image_tag element.image, class: 'image' %></div>
-					<% end %>
-					<h6>Name - <%= element.name %></h6>
+						<div class="image-container">
+						  <%= image_tag element.image, class: 'image-collection' %>
+						</div>
+		      <% end %>
+					<label class="btn" for=" <%= "#{row}-#{column}" %>" > <%= element.name %></label>
+        <input class="modal-state" id= "<%= "#{row}-#{column}" %>" type="checkbox" />
+        <div class="modal">
+          <label class="modal__bg" for=" <%= "#{row}-#{column}" %>" ></label>
+          <div class="modal__inner">
+            <label class="modal__close" for="<%= "#{row}-#{column}" %>"></label>
+            <%= element.plot_summary %>
+          </div>
+        </div>
       </div>
 			<% end %>
 		</div>
 		<% end %>
 </div>
+
