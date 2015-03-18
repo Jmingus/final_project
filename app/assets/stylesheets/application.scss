@@ -96,6 +96,14 @@
       list-style: none;
       margin-bottom: 0px;
     }
+
+    .nav-link-2nd{
+      margin-left: 2.5%;
+      margin-right: 71.5%;
+      display: inline;
+      list-style: none;
+      margin-bottom: 0px;
+    }
     .fa {
       color: #FFFFFF;
     }
@@ -209,6 +217,32 @@
       color: #00001F;
       text-shadow: 1px 1px 0 #FFFFFF;
     }
+
+    .manga-collection {
+      display: inline-block;
+      background-position: 0 0;
+    }
+    .manga-collection:hover {
+      background-position: 0 -39px;
+    }
+    .manga-collection span {
+      background-color: #DEC6EC;
+      color: #00001F;
+      text-shadow: 1px 1px 0 #FFFFFF;
+    }
+
+    .anime-collection {
+      display: inline-block;
+      background-position: 0 0;
+    }
+    .anime-collection:hover {
+      background-position: 0 -39px;
+    }
+    .anime-collection span {
+      background-color: #DEC6EC;
+      color: #00001F;
+      text-shadow: 1px 1px 0 #FFFFFF;
+    }
   }
 }
 footer {
@@ -216,7 +250,7 @@ footer {
   height: 5%;
   padding-top: 1%;
   padding-bottom: 2%;
-  background-color: #303030;
+  background-color: #00001F;
   border-radius: 3px;
   box-shadow: 1px 1px 0 #F01855, 2px 2px 0 #F01855, 3px 3px 3px rgba(0, 0, 0, 0.35);
   margin-left: 5%;
@@ -231,32 +265,33 @@ footer {
   }
 }
 .log-in{
-  margin-left: 10%;
+  margin-left: 14.5%;
 }
 .sign-up{
-  margin-left: 10%;
+  margin-left: 1%;
 }
 .form-groups {
-  background-color: #303030;
+  background-color: #00001F;
   color: white;
   width: 50%;
   margin-left: 25%;
   border-radius: 3px;
+
   .form-submit {
     .actions {
       color: white;
       margin-left: 40%;
       .actions:hover {
-        color: #F01855;
+        color: #ED1C24;
       }
     }
   }
   .form-inputs {
     .field {
-      margin-left: 35%;
+      margin-left: 30%;
     }
     .top-field {
-      margin-left: 35%;
+      margin-left: 30%;
       padding-top: 10%;
     }
   }

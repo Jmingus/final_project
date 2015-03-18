@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>FinalProject</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <%= csrf_meta_tags %>
 </head>
@@ -35,38 +35,53 @@
 						</div>
 						<ul id="nav-menu">
 						<% unless user_signed_in? %>
-							<li class="nav-link"><%= link_to root_path, class: "home fa fa-home fa-2x fa-fw" do %>
+						<li class="nav-link"><%= link_to root_path, class: "home fa fa-home fa-2x fa-fw" do %>
 							    <span>Home</span>
 									<% end %>
-							</li>
-						  <li class="nav-link"><%= link_to new_user_registration_path, class:"sign-up fa fa-plus-circle fa-2x fa-fw" do %>
+						</li>
+
+						<li class="nav-link"><%= link_to new_user_registration_path, class:"sign-up fa fa-plus-circle fa-2x fa-fw" do %>
 									<span>Sign-Up</span>
 								  <% end %>
-						  </li>
-							<li class="nav-link"><%= link_to new_user_session_path, class: "sign-in fa fa-sign-in fa-2x fa-fw" do %>
+						</li>
+
+						<li class="nav-link"><%= link_to new_user_session_path, class: "sign-in fa fa-sign-in fa-2x fa-fw" do %>
 							    <span>Sign-In</span>
 							    <% end %>
-							</li>
+						</li>
 						<% else %>
-						 <li class="nav-link"><%= link_to root_path, class: "home fa fa-home fa-2x fa-fw" do %>
-						        <span>Home</span>
-						      <% end %>
-						 </li>
-					   <li class="nav-link"><%= link_to user_mangas_path(current_user.id), class: "manga fa fa-book fa-2x fa-fw" do %>
-										<span>Manga</span>
-							    <% end %>
-					   </li>
+
 						<li class="nav-link"><%= link_to user_animes_path(current_user.id), class: "anime fa fa-video-camera fa-2x fa-fw" do %>
 						        <span>Anime</span>
+						      <% end %>
+						</li>
+
+						<li class="nav-link"><%= link_to root_path, class: "home fa fa-home fa-2x fa-fw" do %>
+						        <span>Home</span>
+						      <% end %>
+						</li>
+
+						<li class="nav-link"><%= link_to destroy_user_session_path, method: :delete, class: "sign-out fa fa-sign-out fa-2x fa-fw" do %>
+						        <span>Sign-Out</span>
+						      <% end %>
+						</li>
+
+						<li class="nav-link"><%= link_to user_mangas_path(current_user.id), class: "manga fa fa-book fa-2x fa-fw" do %>
+						        <span>Manga</span>
+						      <% end %>
+						</li>
+
+						<li class="nav-link-2nd"><%= link_to animes_collection_path, class: "anime-collection fa fa-archive fa-2x fa-fw" do %>
+							    <span>Anime Collection</span>
 									<% end %>
 						</li>
-						 <li class="nav-link"><%= link_to destroy_user_session_path, method: :delete, class: "sign-out fa fa-sign-out fa-2x fa-fw" do %>
-						       <span>Sign-Out</span>
-						     <% end %>
-						 </li>
-						 <li class="nav-link"><%= link_to 'Manga Collection', mangas_collection_path %></li>
-							<li class="nav-link"><%= link_to 'Anime Collection', animes_collection_path %></li>
-							<% end %>
+
+						<li class="nav-link-2nd"><%= link_to mangas_collection_path, class: "manga-collection fa fa-archive fa-2x fa-fw" do %>
+						      <span>Manga Collection</span>
+						   <% end %>
+						</li>
+
+						<% end %>
 						</ul>
 					</div>
 				</div>
