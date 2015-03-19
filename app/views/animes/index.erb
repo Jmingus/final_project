@@ -21,7 +21,7 @@
 	    <td><div class="image-container-search"><%= image_tag elem.image, class: 'image' %></div></td>
 			<% end %>
 	    <td><%= elem.name %></td>
-	    <td><%= link_to '', addcollection_user_anime_path(current_user.id, elem.id) , class: 'fa fa-plus-square-o', method: :post, data: { disable_with: " Added!" } %></td>
+	    <td><%= link_to '', addcollection_user_anime_path(current_user.id, elem.id) , class: 'fa fa-plus-square-o', method: :post %></td>
 	  </tr>
 	  <% end %>
 	  </tbody>
