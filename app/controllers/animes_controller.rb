@@ -12,6 +12,10 @@ class AnimesController < ApplicationController
     end
   end
 
+  def collection
+    @user = current_user
+  end
+
   def addcollection
     user_id = current_user.id
     if UserAnime.create(user_id: user_id, anime_id: params[:id])

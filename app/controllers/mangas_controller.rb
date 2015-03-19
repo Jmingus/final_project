@@ -29,7 +29,8 @@ class MangasController < ApplicationController
   end
 
   def switch_favorite
-
+    user_id = current_user.id
+    UserManga.where(id: params[:id])[0].toggle!(:favorite)
   end
   private
 

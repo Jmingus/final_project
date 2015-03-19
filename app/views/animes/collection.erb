@@ -1,0 +1,43 @@
+<div class="container">
+  <% @user.animes.each_slice(6).with_index do |elem, row| %>
+    <div class="row">
+      <% elem.each_with_index do |element, column| %>
+        <div class="two columns">
+          <div class="anime-box">
+            <% if element.image == 'Not Available' %>
+              <div class="image-container">
+                <%= image_tag "http://i.imgur.com/u0mao2c.png", class: 'image-collection' %>
+              </div>
+            <% else %>
+              <div class="image-container">
+                <%= image_tag element.image, class: 'image-collection' %>
+              </div>
+            <% end %>
+            <label class="btn" for="<%= "#{row}-#{column}" %>" > <%= element.name %></label>
+          </div>
+          <input class="modal-state" id="<%= "#{row}-#{column}" %>" type="checkbox" />
+          <div class="modal">
+            <label class="modal__bg" for="<%= "#{row}-#{column}" %>" ></label>
+            <div class="modal__inner">
+              <label class="modal__close" for="<%= "#{row}-#{column}" %>"></label>
+              <%= element.plot_summary %>
+              <div class='toggle' id='switch'>
+                <div class='toggle-text-off'>Favorite</div>
+                <div class='glow-comp'></div>
+                <div class='toggle-button'></div>
+                <div class='toggle-text-on'>Favorite</div>
+              </div>
+              <div class='toggle' id='switch2'>
+                <div class='toggle-text-off'>Read</div>
+                <div class='glow-comp'></div>
+                <div class='toggle-button'></div>
+                <div class='toggle-text-on'>Read</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
         post 'addcollection'
       end
       member do
-        post 'switch_favorite'
+        patch 'switch_favorite'
       end
     end
   end

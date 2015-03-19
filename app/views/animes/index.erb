@@ -16,9 +16,9 @@
 	  <% @paginatable_animes.each do |elem| %>
 	  <tr class="collection-add">
 		  <% if elem.image == 'Not Available' %>
-			  <td><%= elem.image %></td>
+			    <td><%= image_tag "http://i.imgur.com/u0mao2c.png", class: 'image' %></td>
 			<% else %>
-	    <td><div class="image-container"><%= image_tag elem.image, class: 'image' %></div></td>
+	    <td><div class="image-container-search"><%= image_tag elem.image, class: 'image' %></div></td>
 			<% end %>
 	    <td><%= elem.name %></td>
 	    <td><%= link_to '', addcollection_user_anime_path(current_user.id, elem.id) , class: 'fa fa-plus-square-o', method: :post, data: { disable_with: " Added!" } %></td>
