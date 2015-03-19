@@ -12,6 +12,9 @@ Rails.application.routes.draw do
       member do
         post 'addcollection'
       end
+      member do
+        post 'switch_favorite'
+      end
     end
   end
 

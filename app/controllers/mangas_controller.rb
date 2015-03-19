@@ -14,6 +14,7 @@ class MangasController < ApplicationController
   def collection
     @user = current_user
   end
+
   def addcollection
     user_id = current_user.id
     if UserManga.create(user_id: user_id, manga_id: params[:id])
@@ -27,6 +28,9 @@ class MangasController < ApplicationController
 
   end
 
+  def switch_favorite
+
+  end
   private
 
   def set_manga
