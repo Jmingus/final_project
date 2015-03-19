@@ -5,8 +5,10 @@
       <div class="two columns">
 				<div class="manga-box">
 				  <% if element.image == 'Not Available' %>
-						<%= element.image %>
-					<% else %>
+						<div class="image-container">
+						<%= image_tag "http://i.imgur.com/u0mao2c.png", class: 'image-collection' %>
+						</div>
+						<% else %>
 						<div class="image-container">
 						  <%= image_tag element.image, class: 'image-collection' %>
 						</div>
