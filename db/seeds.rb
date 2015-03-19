@@ -34,6 +34,25 @@
                              plot_summary: plot,
                              vintage: elem['vintage']
                            })
+          if Manga.where(image: "[]")
+                Manga.where(image: "[]").each do |data|
+                  data.update_attribute(:image, "Not Available")
+                end
+          elsif Manga.where(image: nil)
+                Manga.where(image: nil).each do |data|
+                  data.update_attribute(:image, "Not Available")
+                end
+          end
+
+          if Manga.where(plot_summary: "[]")
+                Manga.where(plot_summary: "[]").each do |data|
+                  data.update_attribute(:plot_summary, "Not Available")
+                  end
+          elsif Manga.where(plot_summary: nil)
+                Manga.where(plot_summary: nil).each do |data|
+                  data.update_attribute(:plot_summary, "Not Available")
+                  end
+          end
       elsif elem['type'] == 'TV'
         if Anime.find_by(api_id: elem['id'])
           next
@@ -60,6 +79,25 @@
                            plot_summary: plot,
                            vintage: elem['vintage']
                          })
+        if Anime.where(image: "[]")
+          Anime.where(image: "[]").each do |data|
+            data.update_attribute(:image, "Not Available")
+          end
+        elsif Anime.where(image: nil)
+          Anime.where(image: nil).each do |data|
+            data.update_attribute(:image, "Not Available")
+          end
+        end
+
+        if Anime.where(plot_summary: "[]")
+          Anime.where(plot_summary: "[]").each do |data|
+            data.update_attribute(:plot_summary, "Not Available")
+          end
+        elsif Anime.where(plot_summary: nil)
+          Anime.where(plot_summary: nil).each do |data|
+            data.update_attribute(:plot_summary, "Not Available")
+          end
+        end
         end
       rescue REXML::ParseException => error
         puts error
