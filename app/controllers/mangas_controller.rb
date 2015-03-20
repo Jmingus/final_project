@@ -1,14 +1,12 @@
 class MangasController < ApplicationController
   before_action :set_manga, only: [:deletecollection]
   def index
-    @mangas = (Manga.all - current_user.mangas)
-    @paginatable_mangas = Kaminari.paginate_array(@mangas).page(params[:page]).per(7)
     if params[:search]
-      @mangas = Manga.search(params[:search]).order("created_at DESC") - current_user.mangas
-      @paginatable_mangas = Kaminari.paginate_array(@mangas).page(params[:page]).per(7)
+      @mangas = Manga.where('id NOT IN (?)', current_user.mangas.pluck(:id)).search(params[:search]).order("created_at DESC")
+      @paginatable_mangas = @mangas.page(params[:page]).per(7)
     else
-      @mangas = Manga.all.order("created_at DESC") - current_user.mangas
-      @paginatable_mangas = Kaminari.paginate_array(@mangas).page(params[:page]).per(7)
+      @mangas = Manga.where('id NOT IN (?)', current_user.mangas.pluck(:id)).order('NAME')
+      @paginatable_mangas = @mangas.page(params[:page]).per(7)
     end
   end
   def collection
@@ -29,8 +27,7 @@ class MangasController < ApplicationController
   end
 
   def switch_favorite
-    user_id = current_user.id
-   if UserManga.where(manga_id: params[:id], user_id: current_user.id)[0].toggle!(:favorite)
+   if UserManga.where(manga_id: params[:id - 1], user_id: current_user.id)[0].toggle!(:favorite)
      render json: "Success", status: 200
    else
      render json: "Failure", status: 500
