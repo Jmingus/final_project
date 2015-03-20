@@ -55,27 +55,27 @@
 
 .right-logo-area {
   height: 20%;
-  .right-logo{
+  .right-logo {
     height: 100px;
     margin-top: 10px;
     background-color: #00001F;
-    .right-logo-ul{
+    .right-logo-ul {
       list-style: none;
       padding-left: 40px;
-      .right-logo-anime{
+      .right-logo-anime {
         display: inline;
         color: #ED1C24;
         font-size: 50px;
         font-family: 'Lora', serif;
       }
-      .right-logo-and{
+      .right-logo-and {
         display: inline;
         font-size: 58px;
         width: 50px;
         color: #FFFFFF;
         font-family: 'Titillium Web', sans-serif;
       }
-      .right-logo-manga{
+      .right-logo-manga {
         padding-left: 10px;
         display: inline;
         font-size: 50px;
@@ -85,166 +85,164 @@
       }
     }
   }
-  #nav-menu {
-    margin-top: 5px;
-    margin-bottom: 0px;
-
-    .nav-link {
-      margin-left: 2.5%;
-      margin-right: 15%;
-      display: inline;
-      list-style: none;
-      margin-bottom: 0px;
-    }
-
-    .nav-link-2nd{
-      margin-left: 2.5%;
-      margin-right: 71.5%;
-      display: inline;
-      list-style: none;
-      margin-bottom: 0px;
-    }
-    .fa {
-      color: #FFFFFF;
-    }
-    span {
-      width: 0;
-      left: 63px;
-      padding: 0;
-      position: absolute;
-      overflow: hidden;
-      font-family: 'Myriad Pro', Arial, Helvetica, sans-serif;
-      font-size: 18px;
-      font-weight: bold;
-      letter-spacing: 0.6px;
-      white-space: nowrap;
-      line-height: 30px;
-      -webkit-transition: 0.25s;
-      -moz-transition: 0.25s;
-      transition: 0.25s;
-    }
-    a {
-      background-color: #00001F;
-      height: 30px;
-      width: 63px;
-      display: block;
-      position: relative;
-      text-decoration: none;
-      margin-left: 0px;
-    }
-
-    a:hover span {
-      width: auto;
-      padding: 0 20px;
-      overflow: visible;
-    }
-    a:hover {
-      text-decoration: none;
-      -moz-box-shadow: 0 0 5px #9ddff5;
-      -webkit-box-shadow: 0 0 5px #9ddff5;
-      box-shadow: 0 0 5px #9ddff5;
-    }
-    .home {
-      display: inline-block;
-      background-position: 0 0;
-    }
-    .home:hover {
-      background-position: 0 -39px;
-    }
-    .home span {
-      background-color: #43B26A;
-      color: #00001F;
-      text-shadow: 1px 1px 0 #FFFFFF;
-    }
-    .sign-up {
-      display: inline-block;
-      background-position: 0 0;
-    }
-    .sign-up:hover {
-      background-position: 0 -39px;
-    }
-    .sign-up span {
-      background-color: #937DFF;
-      color: #00001F;
-      text-shadow: 1px 1px 0 #FFFFFF;
-    }
-    .sign-in {
-      display: inline-block;
-      background-position: 0 0;
-    }
-    .sign-in:hover {
-      background-position: 0 -39px;
-    }
-    .sign-in span {
-      background-color: #FF4B3D;
-      color: #00001F;
-      text-shadow: 1px 1px 0 #FFFFFF;
-    }
-
-    .sign-out {
-      display: inline-block;
-      background-position: 0 0;
-    }
-    .sign-out:hover {
-      background-position: 0 -39px;
-    }
-    .sign-out span {
-      background-color: #55C3DC;
-      color: #00001F;
-      text-shadow: 1px 1px 0 #FFFFFF;
-    }
-    .manga {
-      display: inline-block;
-      background-position: 0 0;
-    }
-    .manga:hover {
-      background-position: 0 -39px;
-    }
-    .manga span {
-      background-color: #F5A8AA;
-      color: #00001F;
-      text-shadow: 1px 1px 0 #FFFFFF;
-    }
-    .anime {
-      display: inline-block;
-      background-position: 0 0;
-    }
-    .anime:hover {
-      background-position: 0 -39px;
-    }
-    .anime span {
-      background-color: #DEC6EC;
-      color: #00001F;
-      text-shadow: 1px 1px 0 #FFFFFF;
-    }
-
-    .manga-collection {
-      display: inline-block;
-      background-position: 0 0;
-    }
-    .manga-collection:hover {
-      background-position: 0 -39px;
-    }
-    .manga-collection span {
-      background-color: #DEC6EC;
-      color: #00001F;
-      text-shadow: 1px 1px 0 #FFFFFF;
-    }
-
-    .anime-collection {
-      display: inline-block;
-      background-position: 0 0;
-    }
-    .anime-collection:hover {
-      background-position: 0 -39px;
-    }
-    .anime-collection span {
-      background-color: #DEC6EC;
-      color: #00001F;
-      text-shadow: 1px 1px 0 #FFFFFF;
-    }
-  }
 }
+  #cssmenu,
+  #cssmenu ul,
+  #cssmenu ul li,
+  #cssmenu ul li a,
+  #cssmenu #menu-button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    line-height: 1;
+    display: block;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #cssmenu:after,
+  #cssmenu > ul:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+  }
+  #cssmenu #menu-button {
+    display: none;
+  }
+  #cssmenu {
+    width: auto;
+    border: 3px solid #ED1C24;
+    border-radius: 3px;
+    font-family: 'Lora', sans-serif;
+    line-height: 1;
+    background: #f7f7f7;
+    box-shadow: 1px 1px 0 #ED1C24, 1px 1px 0 #ED1C24, 1px 1px 1px rgba(0, 0, 0, 0.35);
+    margin-bottom: 10px;
+  }
+  #cssmenu > ul {
+    background-color: #00001F;
+  }
+  #cssmenu > ul > li {
+    float: left;
+  }
+  #cssmenu.align-center > ul {
+    font-size: 0;
+    text-align: center;
+  }
+  #cssmenu.align-center > ul > li {
+    display: inline-block;
+    float: none;
+  }
+  #cssmenu.align-right > ul > li {
+    float: right;
+  }
+  #cssmenu > ul > li > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: auto;
+    padding-left: 20px;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #FFFFFF;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+  }
+  #cssmenu > ul > li > a:hover,
+  #cssmenu > ul > li:hover > a,
+  #cssmenu > ul > li.active > a {
+    color: #444444;
+  }
+  #cssmenu #menu-indicator {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    height: 0;
+    width: 0;
+    border: 5px solid transparent;
+    border-bottom-color: #ED1C24;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    -ms-transition: all 0.25s ease-out;
+    -o-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+  }
+  #cssmenu.small-screen {
+    width: 100%;
+  }
+  #cssmenu.small-screen > ul,
+  #cssmenu.small-screen.align-center > ul {
+    width: 100%;
+    text-align: left;
+  }
+  #cssmenu.small-screen > ul > li,
+  #cssmenu.small-screen.align-center > ul > li {
+    float: none;
+    display: block;
+    border-top: 1px solid rgba(100, 100, 100, 0.1);
+  }
+  #cssmenu.small-screen > ul > li > a {
+    padding: 18px 25px;
+  }
+  #cssmenu.small-screen > ul > li:after,
+  #cssmenu.small-screen > ul > li:before {
+    display: none;
+  }
+  #cssmenu.small-screen #menu-button {
+    display: block;
+    padding: 18px 25px;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #ED1C24;
+    background-color: #00001F;
+  }
+  #cssmenu.small-screen #menu-button.menu-opened {
+    color: #444444;
+  }
+  #cssmenu.small-screen #menu-button:after {
+    content: "";
+    position: absolute;
+    right: 25px;
+    top: 19.5px;
+    display: block;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    border-top: 2px solid #ED1C24;
+    border-bottom: 2px solid #ED1C24;
+    width: 18px;
+    height: 3px;
+  }
+  #cssmenu.small-screen #menu-button.menu-opened:after {
+    border-top: 2px solid #444444;
+    border-bottom: 2px solid #444444;
+  }
+  #cssmenu.small-screen #menu-button:before {
+    content: "";
+    position: absolute;
+    right: 25px;
+    top: 29.5px;
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: #ED1C24;
+  }
+  #cssmenu.small-screen #menu-button.menu-opened:before {
+    background: #444444;
+  }
+  #cssmenu.small-screen #menu-indicator {
+    display: none;
+  }
 footer {
   box-sizing: border-box;
   height: 5%;
@@ -356,4 +354,4 @@ footer {
 
 @media (max-width: 400px) {
 
-}
+  }
