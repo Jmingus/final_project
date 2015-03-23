@@ -1,0 +1,43 @@
+<% @finished_list.take(6).each_slice(3).with_index do |elem, row| %>
+	  <div class="row">
+	    <% elem.each_with_index do |element, column| %>
+	      <div class="four columns">
+	        <div class="anime-box">
+	          <% if element[0].image == 'Not Available' %>
+	            <div class="image-container">
+	              <%= image_tag "http://i.imgur.com/u0mao2c.png", class: 'image-collection' %>
+	            </div>
+	          <% else %>
+	            <div class="image-container">
+	              <%= image_tag element[0].image, class: 'image-collection' %>
+	            </div>
+	          <% end %>
+	          <label class="btn" for="<%= "finished_manga_collection#{row}-#{column}" %>" > <%= element[0].name %></label>
+	        </div>
+	        <input class="modal-state" id="<%= "finished_manga_collection#{row}-#{column}" %>" type="checkbox" />
+	        <div class="modal">
+	          <label class="modal__bg" for="<%= "finished_manga_collection#{row}-#{column}" %>" ></label>
+	          <div class="modal__inner">
+	            <label class="modal__close" for="<%= "finished_manga_collection#{row}-#{column}" %>"></label>
+	            <%= element[0].plot_summary %>
+	            <div class='toggle' id='switch'>
+	              <div class='toggle-text-off'>Favorite</div>
+	              <div class='glow-comp'></div>
+	              <div class='toggle-button'></div>
+	              <div class='toggle-text-on'>Favorite</div>
+	            </div>
+	            <div class='toggle' id='switch2'>
+	              <div class='toggle-text-off'>Read</div>
+	              <div class='glow-comp'></div>
+	              <div class='toggle-button'></div>
+	              <div class='toggle-text-on'>Read</div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    <% end %>
+	  </div>
+	<% end %>
+	<% if @finished_list.count >= 6 %>
+	  <%= link_to 'Read More', class: 'button' %>
+	<% end %>
