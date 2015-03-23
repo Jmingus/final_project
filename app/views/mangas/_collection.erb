@@ -1,8 +1,7 @@
-<div class="container">
-		<% @user.mangas.each_slice(6).with_index do |elem, row| %>
+<% @user.mangas.each_slice(3).with_index do |elem, row| %>
 		<div class="row">
 			<% elem.each_with_index do |element, column| %>
-      <div class="two columns">
+      <div class="four columns">
 				<div class="manga-box">
 				  <% if element.image == 'Not Available' %>
 						<div class="image-container">
@@ -39,5 +38,4 @@
 			<% end %>
 		</div>
 		<% end %>
-</div>
 

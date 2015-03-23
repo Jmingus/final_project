@@ -42,11 +42,9 @@
 		        <li><%= link_to 'Sign-up' ,new_user_registration_path, class:"sign-up fa fa-plus-circle fa-2x fa-fw" %></li>
 		        <li><%= link_to 'Sign-in', new_user_session_path, class: "sign-in fa fa-sign-in fa-2x fa-fw" %></li>
 		      <% else %>
-		        <li><%= link_to 'Home', root_path, class: "home fa fa-home fa-2x fa-fw"  %></li>
+		        <li><%= link_to 'Home', user_path(current_user.id), class: "home fa fa-home fa-2x fa-fw"  %></li>
 		        <li><%= link_to 'Anime', user_animes_path(current_user.id), class: "anime fa fa-video-camera fa-2x fa-fw"  %></li>
-		        <li><%= link_to 'Anime Collection' ,animes_collection_path, class: "anime-collection fa fa-archive fa-2x fa-fw"  %></li>
 		        <li><%= link_to 'Manga', user_mangas_path(current_user.id), class: "manga fa fa-book fa-2x fa-fw"  %></li>
-		        <li><%= link_to 'Manga Collection', mangas_collection_path, class: "manga-collection fa fa-archive fa-2x fa-fw"  %></li>
 		        <li><%= link_to 'Sign-out', destroy_user_session_path, method: :delete, class: "sign-out fa fa-sign-out fa-2x fa-fw"  %></li>
 		      <% end %>
 		    </ul>

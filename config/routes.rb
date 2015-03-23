@@ -17,7 +17,6 @@ Rails.application.routes.draw do
       end
     end
   end
-
   get 'mangas/collection' => 'mangas#collection'
   get 'animes/collection' => 'animes#collection'
   root 'welcome#index'
