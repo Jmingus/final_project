@@ -27,14 +27,14 @@ class MangasController < ApplicationController
   end
 
   def switch_favorite
-   if UserManga.where(manga_id: params[:id], user_id: current_user.id)[0].toggle!(:favorite)
+   if UserManga.where(manga_id: params[:id], user_id: current_user.id)[0].toggle_manga_favorite
      render json: "Success", status: 200
    else
      render json: "Failure", status: 500
    end
   end
     def switch_finished
-      if UserManga.where(manga_id: params[:id -1], user_id: current_user.id)[0].toggle!(:finished)
+      if UserManga.where(manga_id: params[:id], user_id: current_user.id)[0].toggle_manga_finished
         render json: "Success", status: 200
       else
         render json: "Failure", status: 500
