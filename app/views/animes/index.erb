@@ -22,7 +22,7 @@
 	    <td><div class="image-container-search"><%= image_tag elem.image, class: 'image' %></div></td>
 			<% end %>
 	    <td><%= elem.name %></td>
-	    <td><%= link_to '', addcollection_user_anime_path(current_user.id, elem.id) , class: 'fa fa-plus-square-o', method: :post %></td>
+	    <td><%= link_to '', addcollection_user_anime_path(current_user.id, elem.id) , class: 'fa fa-plus-square-o fa-2x fa-collection', method: :post %></td>
 	  </tr>
 	  <% end %>
 	  </tbody>
