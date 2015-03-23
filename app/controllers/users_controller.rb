@@ -7,13 +7,18 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
+    complete_currently_reading = []
+    currently_reading = current_user.user_mangas.where(finished: false).pluck(:manga_id)
+    currently_reading.each do |item|
+      complete_currently_reading << Manga.where(id: item)
+    end
+    @currently_reading = complete_currently_reading
     complete_finished_list = []
-
     finished_list = current_user.user_mangas.where(finished: true).pluck(:manga_id)
     finished_list.each do |item|
       complete_finished_list << Manga.where(id: item)
-      @finished_list = complete_finished_list
     end
+    @finished_list = complete_finished_list
   end
 
   def read

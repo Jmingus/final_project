@@ -40,6 +40,7 @@ class MangasController < ApplicationController
         render json: "Failure", status: 500
       end
     end
+
   private
 
   def set_manga

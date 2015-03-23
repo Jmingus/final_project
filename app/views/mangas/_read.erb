@@ -21,16 +21,16 @@
 	            <label class="modal__close" for="<%= "finished_manga_collection#{row}-#{column}" %>"></label>
 	            <%= element[0].plot_summary %>
 	            <div class='toggle' id='switch'>
-	              <div class='toggle-text-off'>Favorite</div>
+	              <%= link_to 'Favorite', switch_favorite_user_manga_path(current_user, element[0]) , method: :patch ,remote: true, class: 'toggle-text-off'%>
 	              <div class='glow-comp'></div>
 	              <div class='toggle-button'></div>
-	              <div class='toggle-text-on'>Favorite</div>
+	              <%= link_to 'Favorite', switch_favorite_user_manga_path(current_user, element[0]) , method: :patch ,remote: true,class: 'toggle-text-on'%>
 	            </div>
 	            <div class='toggle' id='switch2'>
-	              <div class='toggle-text-off'>Read</div>
+	              <%= link_to 'Finished Reading', switch_finished_user_manga_path(current_user, element[0]), method: :patch,remote: true, class: 'toggle-text-off'%>
 	              <div class='glow-comp'></div>
 	              <div class='toggle-button'></div>
-	              <div class='toggle-text-on'>Read</div>
+	              <%= link_to 'Finished Reading', switch_finished_user_manga_path(current_user, element[0]), method: :patch,remote: true, class: 'toggle-text-on'%>
 	            </div>
 	          </div>
 	        </div>
