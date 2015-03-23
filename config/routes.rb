@@ -5,6 +5,10 @@ Rails.application.routes.draw do
       member do
         post 'addcollection'
       end
+      member do
+        patch 'switch_favorite'
+        patch 'switch_finished'
+      end
     end
   end
   resources :users do

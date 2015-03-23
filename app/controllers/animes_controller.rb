@@ -23,6 +23,22 @@ class AnimesController < ApplicationController
     end
   end
 
+  def switch_favorite
+    if UserAnime.where(anime_id: params[:id], user_id: current_user.id)[0].toggle_anime_favorite
+      render json: "Success", status: 200
+    else
+      render json: "Failure", status: 500
+    end
+  end
+
+  def switch_finished
+    if UserAnime.where(anime_id: params[:id], user_id: current_user.id)[0].toggle_anime_finished
+      render json: "Success", status: 200
+    else
+      render json: "Failure", status: 500
+    end
+  end
+
   def deletecollection
 
   end
