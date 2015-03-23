@@ -12,13 +12,13 @@
                 <%= image_tag element.image, class: 'image-collection' %>
               </div>
             <% end %>
-            <label class="btn" for="<%= "#{row}-#{column}" %>" > <%= element.name %></label>
+            <label class="btn" for="<%= "anime_collection#{row}-#{column}" %>" > <%= element.name %></label>
           </div>
-          <input class="modal-state" id="<%= "#{row}-#{column}" %>" type="checkbox" />
+          <input class="modal-state" id="<%= "anime_collection#{row}-#{column}" %>" type="checkbox" />
           <div class="modal">
-            <label class="modal__bg" for="<%= "#{row}-#{column}" %>" ></label>
+            <label class="modal__bg" for="<%= "anime_collection#{row}-#{column}" %>" ></label>
             <div class="modal__inner">
-              <label class="modal__close" for="<%= "#{row}-#{column}" %>"></label>
+              <label class="modal__close" for="<%= "anime_collection#{row}-#{column}" %>"></label>
               <%= element.plot_summary %>
               <div class='toggle' id='switch'>
                 <div class='toggle-text-off'>Favorite</div>
