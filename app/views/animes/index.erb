@@ -1,3 +1,4 @@
+<% provide(:title, "Anime Search") %>
 <div class="container">
 	<%= form_tag(user_animes_path, :method => "get", id: "search-form") do %>
 	<%= text_field_tag :search, params[:search], placeholder: "Search For Anime" %>

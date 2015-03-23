@@ -1,4 +1,5 @@
-<h2 class="log-in">Animanga Log in</h2>
+<% provide(:title, "Sign-In") %>
+<h2 class="log-in">Animanga Sign-In</h2>
 <div class="form-groups">
 	<div class="form-inputs">
 	<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -12,7 +13,7 @@
 	</div>
 	<div class="form-submit">
 	  <div class="actions">
-	    <%= f.submit "Log in", class: "actions" %>
+	    <%= f.submit "Sign-In", class: "actions" %>
 	  </div>
 	<% end %>
 	</div>

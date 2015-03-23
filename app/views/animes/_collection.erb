@@ -1,4 +1,4 @@
-<% @user.animes.each_slice(3).with_index do |elem, row| %>
+<% @user.animes.take(6).each_slice(3).with_index do |elem, row| %>
     <div class="row">
       <% elem.each_with_index do |element, column| %>
         <div class="four columns">
@@ -38,3 +38,6 @@
       <% end %>
     </div>
   <% end %>
+<% if @user.animes.count >= 6 %>
+  <%= link_to 'Read More', class: 'button' %>
+<% end %>
