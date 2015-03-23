@@ -32,8 +32,14 @@ class MangasController < ApplicationController
    else
      render json: "Failure", status: 500
    end
-
   end
+    def switch_finished
+      if UserManga.where(manga_id: params[:id -1], user_id: current_user.id)[0].toggle!(:finished)
+        render json: "Success", status: 200
+      else
+        render json: "Failure", status: 500
+      end
+    end
   private
 
   def set_manga
