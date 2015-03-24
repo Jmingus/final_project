@@ -278,7 +278,8 @@ footer {
   .form-submit {
     .actions {
       color: white;
-      margin-left: 40%;
+      margin-left: 15%;
+      width: 70%;
       .actions:hover {
         color: #ED1C24;
       }
@@ -291,6 +292,20 @@ footer {
     .top-field {
       margin-left: 30%;
       padding-top: 10%;
+    }
+    .top-sign-in{
+      margin-left: 30%;
+      padding-top: 10%;
+      #user_email{
+        width: 55%;
+      }
+    }
+    .sign-in-field{
+      margin-left: 30%;
+      width: 40%;
+      #user_password{
+        width: 97%;
+      }
     }
   }
 }

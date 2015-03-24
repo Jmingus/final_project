@@ -3,12 +3,12 @@
 <div class="form-groups">
 	<div class="form-inputs">
 	<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-	  <div class="top-field">
-	    <%= f.input :email, autofocus: true, placeholder: "Email",label: false %>
+	  <div class="top-sign-in">
+	    <%= f.input :email, autofocus: true, placeholder: "Email"%>
 	  </div>
 
-	  <div class="field">
-	    <%= f.input :password, autocomplete: "off", placeholder: 'Password', label: false %>
+	  <div class="sign-in-field">
+	    <%= f.input :password, autocomplete: "off", placeholder: 'Password' %>
 	  </div>
 	</div>
 	<div class="form-submit">

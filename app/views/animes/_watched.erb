@@ -27,10 +27,10 @@
               <%= link_to 'Favorite', switch_favorite_user_anime_path(current_user, element[0]) , method: :patch ,remote: true,class: 'toggle-text-on'%>
             </div>
             <div class='toggle' id='switch2'>
-              <%= link_to 'Finished Reading', switch_finished_user_anime_path(current_user, element[0]), method: :patch,remote: true, class: 'toggle-text-off'%>
+              <%= link_to 'Finished Watching', switch_finished_user_anime_path(current_user, element[0]), method: :patch,remote: true, class: 'toggle-text-off'%>
               <div class='glow-comp'></div>
               <div class='toggle-button'></div>
-              <%= link_to 'Finished Reading', switch_finished_user_anime_path(current_user, element[0]), method: :patch,remote: true, class: 'toggle-text-on'%>
+              <%= link_to 'Finished Watching', switch_finished_user_anime_path(current_user, element[0]), method: :patch,remote: true, class: 'toggle-text-on'%>
             </div>
           </div>
         </div>
