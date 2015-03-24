@@ -2,10 +2,18 @@ class AnimesController < ApplicationController
   before_action :set_anime, only: [:deletecollection]
   def index
     if params[:search]
-      @animes = Anime.where('id NOT IN (?)', current_user.animes.pluck(:id)).search(params[:search]).order("created_at DESC")
+      if current_user.animes.count <= 0
+        @animes = Anime.search(params[:search]).order("created_at DESC")
+      else
+        @animes = Anime.where('id NOT IN (?)', current_user.animes.pluck(:id)).search(params[:search]).order("created_at DESC")
+      end
       @paginatable_animes = @animes.page(params[:page]).per(7)
     else
-      @animes = Anime.where('id NOT IN (?)', current_user.animes.pluck(:id)).order('NAME')
+      if current_user.animes.count <= 0
+        @animes = Anime.search(params[:search]).order("created_at DESC")
+      else
+        @animes = Anime.where('id NOT IN (?)', current_user.animes.pluck(:id)).order('NAME')
+      end
       @paginatable_animes = @animes.page(params[:page]).per(7)
     end
   end

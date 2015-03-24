@@ -2,10 +2,18 @@ class MangasController < ApplicationController
   before_action :set_manga, only: [:deletecollection]
   def index
     if params[:search]
-      @mangas = Manga.where('id NOT IN (?)', current_user.mangas.pluck(:id)).search(params[:search]).order("created_at DESC")
-      @paginatable_mangas = @mangas.page(params[:page]).per(7)
+      if current_user.mangas.count <= 0
+        @mangas = Manga.search(params[:search]).order("created_at DESC")
+      else
+        @mangas = Manga.where('id NOT IN (?)', current_user.mangas.pluck(:id)).search(params[:search]).order("created_at DESC")
+      end
+        @paginatable_mangas = @mangas.page(params[:page]).per(7)
     else
-      @mangas = Manga.where('id NOT IN (?)', current_user.mangas.pluck(:id)).order('NAME')
+      if current_user.mangas.count <= 0
+        @mangas = Manga.search(params[:search]).order("created_at DESC")
+      else
+        @mangas = Manga.where('id NOT IN (?)', current_user.mangas.pluck(:id)).order('NAME')
+      end
       @paginatable_mangas = @mangas.page(params[:page]).per(7)
     end
   end
