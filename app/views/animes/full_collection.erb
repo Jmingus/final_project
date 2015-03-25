@@ -1,7 +1,5 @@
-<% if @finished_anime_list.count >= 6 %>
-  <span class="padding-button"><%= link_to 'Read More', animes_full_watched_path, class: 'button' %></span>
-<% end %>
-<% @finished_anime_list.take(6).each_slice(6).with_index do |elem, row| %>
+<div class="container">
+<% @currently_watching.each_slice(6).with_index do |elem, row| %>
   <div class="row">
     <% elem.each_with_index do |element, column| %>
       <div class="two columns">
@@ -41,3 +39,4 @@
     <% end %>
   </div>
 <% end %>
+</div>

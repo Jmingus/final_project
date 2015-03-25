@@ -17,8 +17,13 @@ class MangasController < ApplicationController
       @paginatable_mangas = @mangas.page(params[:page]).per(7)
     end
   end
-  def collection
-    @user = current_user
+
+  def full_collection
+    @currently_reading = Manga.currently_reading(current_user)
+  end
+
+  def full_read
+    @finished_manga_list = Manga.finished_reading(current_user)
   end
 
   def addcollection

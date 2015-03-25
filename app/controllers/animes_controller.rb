@@ -18,10 +18,12 @@ class AnimesController < ApplicationController
     end
   end
 
-  def collection
-    @user = current_user
+  def full_collection
+    @currently_watching  = Anime.where(id: current_user.user_animes.where(finished: false).pluck(:anime_id))
   end
-
+  def full_watched
+    @finished_anime_list = Anime.where(id: current_user.user_animes.where(finished: true).pluck(:anime_id))
+  end
   def addcollection
     user_id = current_user.id
     if UserAnime.create(user_id: user_id, anime_id: params[:id])

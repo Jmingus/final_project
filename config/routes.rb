@@ -22,6 +22,10 @@ Rails.application.routes.draw do
       end
     end
   end
+  get 'animes/full_watched'
+  get 'animes/full_collection'
+  get 'mangas/full_read'
+  get 'mangas/full_collection'
   get 'mangas/collection' => 'mangas#collection'
   get 'animes/collection' => 'animes#collection'
   root 'welcome#index'

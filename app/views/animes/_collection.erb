@@ -1,5 +1,5 @@
 <% if @currently_watching.count >= 6 %>
-  <%= link_to 'Read More', class: 'button' %>
+  <span class="padding-button"><%= link_to 'Read More', animes_full_collection_path, class: 'button' %></span>
 <% end %>
 <% @currently_watching.take(6).each_slice(6).with_index do |elem, row| %>
     <div class="row">

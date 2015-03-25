@@ -1,0 +1,42 @@
+<div class="container">
+<% @finished_manga_list.each_slice(6).with_index do |elem, row| %>
+  <div class="row">
+    <% elem.each_with_index do |element, column| %>
+      <div class="two columns">
+        <div class="anime-box">
+          <% if element.image == 'Not Available' %>
+            <div class="image-container">
+              <%= image_tag "http://i.imgur.com/u0mao2c.png", class: 'image-collection' %>
+            </div>
+          <% else %>
+            <div class="image-container">
+              <%= image_tag element.image, class: 'image-collection' %>
+            </div>
+          <% end %>
+          <label class="btn" for="<%= "finished_manga_collection#{row}-#{column}" %>" > <%= element.name %></label>
+        </div>
+        <input class="modal-state" id="<%= "finished_manga_collection#{row}-#{column}" %>" type="checkbox" />
+        <div class="modal">
+          <label class="modal__bg" for="<%= "finished_manga_collection#{row}-#{column}" %>" ></label>
+          <div class="modal__inner">
+            <label class="modal__close" for="<%= "finished_manga_collection#{row}-#{column}" %>"></label>
+            <%= element.plot_summary %>
+            <div class='toggle' id='switch'>
+              <%= link_to 'Favorite', switch_favorite_user_manga_path(current_user, element) , method: :patch ,remote: true, class: 'toggle-text-off'%>
+              <div class='glow-comp'></div>
+              <div class='toggle-button'></div>
+              <%= link_to 'Favorite', switch_favorite_user_manga_path(current_user, element) , method: :patch ,remote: true,class: 'toggle-text-on'%>
+            </div>
+            <div class='toggle' id='switch2'>
+              <%= link_to 'Finished Reading', switch_finished_user_manga_path(current_user, element), method: :patch,remote: true, class: 'toggle-text-off'%>
+              <div class='glow-comp'></div>
+              <div class='toggle-button'></div>
+              <%= link_to 'Finished Reading', switch_finished_user_manga_path(current_user, element), method: :patch,remote: true, class: 'toggle-text-on'%>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+</div>
