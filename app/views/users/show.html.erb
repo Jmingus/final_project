@@ -1,26 +1,51 @@
 <% provide(:title, "Dashboard") %>
-<div class="container">
-	<h1>Recommendations</h1>
-	<%= render partial: "recommendations" %>
+<div class="recommendation-container">
+  <h1>Recommendations</h1>
+  <div class="recommendation-row">
+<% @recommendations.take(6).each do |elem| %>
+    <div class="two columns">
+      <div class="recommendation-box">
+        <% if elem.image == 'Not Available' %>
+          <div class="image-container">
+            <%= image_tag "http://i.imgur.com/u0mao2c.png", class: 'image-collection' %>
+          </div>
+        <% else %>
+          <div class="image-container">
+            <%= image_tag elem.image, class: 'image-collection' %>
+          </div>
+        <% end %>
+        <label class="btn" for="<%= "manga_collection#{elem.name}" %>" > <%= elem.name %></label>
+      </div>
+      <input class="modal-state" id="<%= "manga_collection#{elem.name}" %>" type="checkbox" />
+      <div class="modal">
+        <label class="modal__bg" for="<%= "manga_collection#{elem.name}" %>" ></label>
+        <div class="modal__inner">
+          <label class="modal__close" for="<%= "manga_collection#{elem.name}" %>"></label>
+          <%= elem.plot_summary %>
+        </div>
+      </div>
+    </div>
+<% end %>
+</div>
+<% if @recommendations.count >= 6 %>
+  <%= link_to 'Read More', class: 'button' %>
+<% end %>
 </div>
 
-<div class="container">
-	<div class="six columns">
+<div class="content-container">
 		<h3>Currently Watching</h3>
 	  <%= render partial: "animes/collection" %>
 	</div>
-	<div class="six columns">
+<div class="content-container">
 		<h3>Currently Reading</h3>
 	  <%= render partial: "mangas/collection" %>
 	</div>
-</div>
-<div class="container">
-	<div class="six columns">
-		<h1>Watched</h1>
+
+<div class="content-container">
+		<h3>Finished Watching</h3>
 		<%= render partial: "animes/watched" %>
-	</div>
-	<div class="six columns">
-		<h1>Read</h1>
+</div>
+	<div class="content-container">
+		<h3>Finished Reading</h3>
 		<%= render partial: "mangas/read" %>
 	</div>
-</div>

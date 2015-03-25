@@ -15,4 +15,5 @@ class User < ActiveRecord::Base
   has_many :user_mangas
   has_many :animes, through: :user_animes
   has_many :mangas, through: :user_mangas
+
 end
