@@ -1,35 +1,36 @@
 <% provide(:title, "Dashboard") %>
 <div class="recommendation-container">
-  <h1><span class="title-of-page">Recommendations</span><% if @recommendations.count >= 6 %>
-      <%= link_to 'Read More', class: 'button' %>
-    <% end %>
-  </h1>
+  <h1><span class="title-of-page">Recommendations</span></h1>
   <div class="recommendation-row">
-<% @recommendations.take(6).each do |elem| %>
-    <div class="two columns">
-      <div class="recommendation-box">
-        <% if elem.image == 'Not Available' %>
-          <div class="image-container">
-            <%= image_tag "http://i.imgur.com/u0mao2c.png", class: 'image-collection' %>
-          </div>
-        <% else %>
-          <div class="image-container">
-            <%= image_tag elem.image, class: 'image-collection' %>
-          </div>
-        <% end %>
-        <label class="btn" for="<%= "manga_collection#{elem.name}" %>" > <%= elem.name %></label>
-      </div>
-      <input class="modal-state" id="<%= "manga_collection#{elem.name}" %>" type="checkbox" />
-      <div class="modal">
-        <label class="modal__bg" for="<%= "manga_collection#{elem.name}" %>" ></label>
-        <div class="modal__inner">
-          <label class="modal__close" for="<%= "manga_collection#{elem.name}" %>"></label>
-          <%= elem.plot_summary %>
-        </div>
-      </div>
-    </div>
-<% end %>
-</div>
+	<% if @recommendations == [] %>
+		<h5 class="padding-button">You don't have any favourite items, you should hurry up and do that!</h5>
+	<% else %>
+		<% @recommendations.sample(6).each do |elem| %>
+		    <div class="two columns">
+		      <div class="recommendation-box">
+		        <% if elem.image == 'Not Available' %>
+		          <div class="image-container">
+		            <%= image_tag "http://i.imgur.com/u0mao2c.png", class: 'image-collection' %>
+		          </div>
+		        <% else %>
+		          <div class="image-container">
+		            <%= image_tag elem.image, class: 'image-collection' %>
+		          </div>
+		        <% end %>
+		        <label class="btn" for="<%= "manga_collection#{elem.name}" %>" > <%= elem.name %></label>
+		      </div>
+		      <input class="modal-state" id="<%= "manga_collection#{elem.name}" %>" type="checkbox" />
+		      <div class="modal">
+		        <label class="modal__bg" for="<%= "manga_collection#{elem.name}" %>" ></label>
+		        <div class="modal__inner">
+		          <label class="modal__close" for="<%= "manga_collection#{elem.name}" %>"></label>
+		          <%= elem.plot_summary %>
+		        </div>
+		      </div>
+		    </div>
+		<% end %>
+	<% end %>
+	</div>
 </div>
 
 <div class="content-container">
