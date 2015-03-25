@@ -1,6 +1,9 @@
 <% if @finished_anime_list.count >= 6 %>
   <span class="padding-button"><%= link_to 'Read More', animes_full_watched_path, class: 'button' %></span>
 <% end %>
+<% if @finished_anime_list == [] %>
+  <h5 class="padding-button">You have no items in your collection yet that have been finished, Add some when you done watching something!</h5>
+<% else %>
 <% @finished_anime_list.take(6).each_slice(6).with_index do |elem, row| %>
   <div class="row">
     <% elem.each_with_index do |element, column| %>
@@ -40,4 +43,5 @@
       </div>
     <% end %>
   </div>
+<% end %>
 <% end %>

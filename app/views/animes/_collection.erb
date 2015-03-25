@@ -1,6 +1,9 @@
 <% if @currently_watching.count >= 6 %>
   <span class="padding-button"><%= link_to 'Read More', animes_full_collection_path, class: 'button' %></span>
 <% end %>
+<% if @currently_watching == [] %>
+	<h5 class="padding-button">You have no items in your collection yet, hop on over to <%= link_to 'Anime Search', user_animes_path, class: 'color-link' %> to find some!</h5>
+	<% else %>
 <% @currently_watching.take(6).each_slice(6).with_index do |elem, row| %>
     <div class="row">
       <% elem.each_with_index do |element, column| %>
@@ -41,3 +44,4 @@
       <% end %>
     </div>
   <% end %>
+<% end %>

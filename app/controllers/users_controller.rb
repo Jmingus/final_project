@@ -38,7 +38,7 @@ class UsersController < ApplicationController
     end
     users_with_same_cleaned_anime = users_with_same_anime.uniq
     users_with_same_cleaned_anime.each do |elem|
-      other_users_anime.push(UserManga.where(user_id: elem, favorite: true).pluck(:anime_id))
+      other_users_anime.push(UserAnime.where(user_id: elem, favorite: true).pluck(:anime_id))
     end
     anime_recommendations = Anime.where(id: other_users_anime.flatten)
 
