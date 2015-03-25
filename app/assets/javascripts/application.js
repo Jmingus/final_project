@@ -13,6 +13,13 @@ $( document ).ready(function() {
         e.preventDefault();
         $(this).toggleClass('toggle-on');
     });
+
+    setTimeout(function() {
+        $('#notice').fadeOut('fast');
+    }, 1000);
+    setTimeout(function() {
+        $('#alert').fadeOut('fast');
+    }, 4000);
     (function($) {
 
         $.fn.menumaker = function(options) {

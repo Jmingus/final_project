@@ -24,10 +24,11 @@
 .content-container{
   margin-left: 15%;
   margin-right: 15%;
-  background-color: #66685F;
+  background-color: white;
   margin-bottom: 10px;
   border-radius: 3px;
-  box-shadow: 1px 1px 0 #F01855, 2px 2px 0 #F01855, 3px 3px 3px rgba(0, 0, 0, 0.35);
+  border: 3px solid #00001F;
+  box-shadow: 1px 1px 0 #00001F, 1px 1px 0 #00001F, 1px 1px 1px rgba(0, 0, 0, 0.35);
 }
 .black-line-divider{
   margin-top: 10px;
@@ -36,21 +37,31 @@
 }
 .notice-area{
   height: 30px;
-  .notice{
-    margin-bottom: 0px;
+  .notice {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    padding-left: 5px;
+    background-color: #6AEE78;
+    box-shadow: 1px 1px 0 #00001F, 2px 2px 0 #00001F, 3px 3px 3px rgba(0, 0, 0, 0.35);
   }
   .alert{
-    margin-bottom: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    padding-left: 5px;
+    background-color: #CC1C20;
+    box-shadow: 1px 1px 0 #00001F, 2px 2px 0 #00001F, 3px 3px 3px rgba(0, 0, 0, 0.35);
   }
 }
-.left-logo-area{
+.logo-area{
   height: 15%;
-  .left-logo{
+  .logo{
     height: 100px;
     margin-top: 10px;
     background-color: #00001F;
-    .left-logo-animanga{
-      font-family: 'Gravitas One', cursive;
+    .logo-animanga{
+      font-family: 'Titillium Web', sans-serif;
       font-weight: bold;
       font-size: 40px;
       color: #FFFFFF;
@@ -58,40 +69,16 @@
       padding-top: 30px;
       padding-bottom: 20px;
     }
-
-  }
-}
-
-.right-logo-area {
-  height: 20%;
-  .right-logo {
-    height: 100px;
-    margin-top: 10px;
-    background-color: #00001F;
-    .right-logo-ul {
-      list-style: none;
-      padding-left: 40px;
-      .right-logo-anime {
-        display: inline;
-        color: #ED1C24;
-        font-size: 50px;
-        font-family: 'Lora', serif;
-      }
-      .right-logo-and {
-        display: inline;
-        font-size: 58px;
-        width: 50px;
-        color: #FFFFFF;
-        font-family: 'Titillium Web', sans-serif;
-      }
-      .right-logo-manga {
-        padding-left: 10px;
-        display: inline;
-        font-size: 50px;
-        color: #FFFFFF;
-        font-style: italic;
-        font-family: 'Titillium Web', sans-serif;
-      }
+    .anime-logo{
+      color: #ED1C24;
+      font-size: 24px;
+    }
+    .animanga-logo {
+      font-size: 40px;
+      margin-left: 4%;
+    }
+    .manga-logo{
+      font-size: 24px;
     }
   }
 }
@@ -325,10 +312,16 @@ footer {
   height: 350px;
   margin-left: 15%;
   margin-right: 15%;
+  border-radius: 3px;
   .recommendation-box{
     height: 250px;
     position: relative;
   }
+}
+.title-of-page{
+  font-family: 'Lora', serif;
+  padding-left: 10px;
+  text-decoration: underline;
 }
 @media (max-width: 1200px) {
 

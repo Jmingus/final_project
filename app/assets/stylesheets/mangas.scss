@@ -40,7 +40,7 @@ input[type="checkbox"]{
   background: #00001F;
   color: #FFF;
   font-size: 1em;
-  margin: 2rem 0;
+  margin: 2rem 0 0 1rem;
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
@@ -148,13 +148,13 @@ input[type="checkbox"]{
 }
 
 #switch{
-  width: 100px;
+  width: 200px;
   height: 40px;
 }
 
 #switch2{
-  margin-left: 15%;
-  width: 100px;
+  margin-left: 30%;
+  width: 200px;
   height: 40px;
 }
 .toggle{
@@ -177,7 +177,7 @@ input[type="checkbox"]{
   top: 4px;
   width: 28px;
   bottom: 4px;
-  right: 60px;
+  left: 3px;
   background-color: #444249;
   border-radius: 19px;
   cursor: pointer;
@@ -187,7 +187,7 @@ input[type="checkbox"]{
 
 .toggle-on .toggle-button{
   top: 3px;
-  width: 90px;
+  width: 190px;
   bottom: 3px;
   right: 3px;
   border-radius: 23px;

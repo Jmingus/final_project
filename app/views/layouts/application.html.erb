@@ -11,29 +11,16 @@
   <div class="black-line"></div>
   <div class="container">
     <div class="row">
-      <div class="four columns">
-        <div class="left-logo-area">
-          <div class="left-logo">
-            <h1 class="left-logo-animanga">Animanga</h1>
+        <div class="logo-area">
+          <div class="logo">
+            <h1 class="logo-animanga"><span class="animanga-logo">Animanga</span> | <span class="anime-logo">Anime</span><span class="manga-logo"> & Manga</span></h1>
           </div>
         </div>
         <div class="notice-area">
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
+          <p class="notice" id="notice"><%= notice %></p>
+          <p class="alert" id="alert"><%= alert %></p>
         </div>
       </div>
-      <div class="eight columns">
-        <div class="right-logo-area">
-          <div class="right-logo">
-            <ul class="right-logo-ul">
-              <li class="right-logo-anime">Anime </li>
-              <li class="right-logo-and">&</li>
-              <li class="right-logo-manga">Manga</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
     <div id='cssmenu'>
       <ul>
         <% unless user_signed_in? %>

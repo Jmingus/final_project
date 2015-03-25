@@ -1,6 +1,9 @@
 <% provide(:title, "Dashboard") %>
 <div class="recommendation-container">
-  <h1>Recommendations</h1>
+  <h1><span class="title-of-page">Recommendations</span><% if @recommendations.count >= 6 %>
+      <%= link_to 'Read More', class: 'button' %>
+    <% end %>
+  </h1>
   <div class="recommendation-row">
 <% @recommendations.take(6).each do |elem| %>
     <div class="two columns">
@@ -27,25 +30,22 @@
     </div>
 <% end %>
 </div>
-<% if @recommendations.count >= 6 %>
-  <%= link_to 'Read More', class: 'button' %>
-<% end %>
 </div>
 
 <div class="content-container">
-		<h3>Currently Watching</h3>
+		<h3><span class="title-of-page">Currently Watching</span></h3>
 	  <%= render partial: "animes/collection" %>
 	</div>
 <div class="content-container">
-		<h3>Currently Reading</h3>
+		<h3><span class="title-of-page">Currently Reading</span></h3>
 	  <%= render partial: "mangas/collection" %>
 	</div>
 
 <div class="content-container">
-		<h3>Finished Watching</h3>
+		<h3><span class="title-of-page">Finished Watching</span></h3>
 		<%= render partial: "animes/watched" %>
 </div>
 	<div class="content-container">
-		<h3>Finished Reading</h3>
+		<h3><span class="title-of-page">Finished Reading</span></h3>
 		<%= render partial: "mangas/read" %>
 	</div>

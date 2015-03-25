@@ -1,3 +1,6 @@
+<% if @currently_reading.count >= 6 %>
+  <%= link_to 'Read More', class: 'button' %>
+<% end %>
 <% @currently_reading.take(6).each_slice(6).with_index do |elem, row| %>
 		<div class="row">
 			<% elem.each_with_index do |element, column| %>
@@ -38,6 +41,3 @@
 			<% end %>
 		</div>
 		<% end %>
-<% if @currently_reading.count >= 6 %>
-	<%= link_to 'Read More', class: 'button' %>
-<% end %>

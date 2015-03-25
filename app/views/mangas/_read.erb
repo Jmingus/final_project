@@ -1,3 +1,6 @@
+<% if @finished_manga_list.count >= 6 %>
+  <%= link_to 'Read More', class: 'button' %>
+<% end %>
 <% @finished_manga_list.take(6).each_slice(6).with_index do |elem, row| %>
 	  <div class="row">
 	    <% elem.each_with_index do |element, column| %>
@@ -37,7 +40,4 @@
 	      </div>
 	    <% end %>
 	  </div>
-	<% end %>
-	<% if @finished_manga_list.count >= 6 %>
-	  <%= link_to 'Read More', class: 'button' %>
 	<% end %>
