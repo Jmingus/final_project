@@ -25,10 +25,8 @@
   margin-left: 15%;
   margin-right: 15%;
   background-color: white;
-  margin-bottom: 10px;
-  border-radius: 3px;
-  border: 3px solid #00001F;
-  box-shadow: 1px 1px 0 #00001F, 1px 1px 0 #00001F, 1px 1px 1px rgba(0, 0, 0, 0.35);
+  margin-bottom: 40px;
+  margin-top: 40px;
 }
 .black-line-divider{
   margin-top: 10px;
@@ -114,7 +112,6 @@
     width: auto;
     border: 3px solid #ED1C24;
     border-radius: 3px;
-    font-family: 'Lora', sans-serif;
     line-height: 1;
     background: #f7f7f7;
     box-shadow: 1px 1px 0 #ED1C24, 1px 1px 0 #ED1C24, 1px 1px 1px rgba(0, 0, 0, 0.35);
@@ -141,6 +138,7 @@
     padding-top: 15px;
     padding-bottom: 15px;
     width: auto;
+    font-family: "Titillium Web", sans-serif;
     padding-left: 20px;
     font-size: 20px;
     text-transform: uppercase;
@@ -328,6 +326,9 @@ footer {
 }
 .color-link{
   color: #EA202D;
+}
+.font{
+  font-family: 'Titillium Web', sans-serif;
 }
 @media (max-width: 1200px) {
 
