@@ -17,7 +17,7 @@
             extra = []
             image_url = []
             if advanced_info['ann'].class == Array && advanced_info['ann']['manga']['info'].class == Array
-              image_url << advanced_info['ann']['manga']['info'][0]['src']
+              image_url << advanced_info['ann']['manga']['info'].src
               advanced_info['ann']['manga']['info'].each do |element|
                 if element.length >= 70
                   plot << element
@@ -43,7 +43,7 @@
           extra = []
           image_url = []
           if advanced_info['ann'].class == Array && advanced_info['ann']['anime']['info'].class == Array
-            image_url << advanced_info['ann']['anime']['info'][0]['src']
+            image_url << advanced_info['ann']['anime']['info'].src
             advanced_info['ann']['anime']['info'].each do |element|
               if element.length >= 70
                 plot << element
