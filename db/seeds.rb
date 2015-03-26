@@ -79,25 +79,6 @@
                            plot_summary: plot,
                            vintage: elem['vintage']
                          })
-        if Anime.where(image: "[]")
-          Anime.where(image: "[]").each do |data|
-            data.update_attribute(:image, "Not Available")
-          end
-        elsif Anime.where(image: nil)
-          Anime.where(image: nil).each do |data|
-            data.update_attribute(:image, "Not Available")
-          end
-        end
-
-        if Anime.where(plot_summary: "[]")
-          Anime.where(plot_summary: "[]").each do |data|
-            data.update_attribute(:plot_summary, "Not Available")
-          end
-        elsif Anime.where(plot_summary: nil)
-          Anime.where(plot_summary: nil).each do |data|
-            data.update_attribute(:plot_summary, "Not Available")
-          end
-        end
         end
       rescue REXML::ParseException => error
         puts error
