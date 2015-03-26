@@ -17,7 +17,7 @@
 	  <% @paginatable_animes.each do |elem| %>
 	  <tr class="collection-add">
 		  <% if elem.image == 'Not Available' %>
-			    <td><%= image_tag "http://i.imgur.com/u0mao2c.png", class: 'image' %></td>
+			    <td><div class="image-container-search"><%= image_tag "http://i.imgur.com/3vWYZyV.jpg", class: 'image' %></div></td>
 			<% else %>
 	    <td><div class="image-container-search"><%= image_tag elem.image, class: 'image' %></div></td>
 			<% end %>
