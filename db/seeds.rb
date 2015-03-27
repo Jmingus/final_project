@@ -27,13 +27,34 @@
               end
             end
           end
+          image_url.each do |image_item|
           Manga.create({ name: elem['name'],
                              api_id: elem['id'],
                              api_gid: elem['gid'],
-                             image: image_url,
+                             image: image_item,
                              plot_summary: plot,
                              vintage: elem['vintage']
                            })
+          end
+          if Manga.where(image: "[]")
+            Manga.where(image: "[]").each do |data|
+              data.update_attribute(:image, "Not Available")
+            end
+          elsif Manga.where(image: "[nil]")
+            Manga.where(image: "[nil]").each do |data|
+              data.update_attribute(:image, "Not Available")
+            end
+          end
+
+          if Manga.where(plot_summary: "[]")
+            Manga.where(plot_summary: "[]").each do |data|
+              data.update_attribute(:plot_summary, "Not Available")
+            end
+          elsif Manga.where(plot_summary: "[nil]")
+            Manga.where(plot_summary: "[nil]").each do |data|
+              data.update_attribute(:plot_summary, "Not Available")
+            end
+          end
       elsif elem['type'] == 'TV'
         if Anime.find_by(api_id: elem['id'])
           next
@@ -53,13 +74,34 @@
             end
           end
         end
+        image_url.each do |image_item|
         Anime.create({ name: elem['name'],
                            api_id: elem['id'],
                            api_gid: elem['gid'],
-                           image: image_url,
+                           image: image_item,
                            plot_summary: plot,
                            vintage: elem['vintage']
                          })
+        end
+        if Anime.where(image: "[]")
+          Anime.where(image: "[]").each do |data|
+            data.update_attribute(:image, "Not Available")
+          end
+        elsif Anime.where(image: "[nil]")
+          Anime.where(image: "[nil]").each do |data|
+            data.update_attribute(:image, "Not Available")
+          end
+        end
+
+        if Anime.where(plot_summary: "[]")
+          Anime.where(plot_summary: "[]").each do |data|
+            data.update_attribute(:plot_summary, "Not Available")
+          end
+        elsif Anime.where(plot_summary: "[nil]")
+          Anime.where(plot_summary: "[nil]").each do |data|
+            data.update_attribute(:plot_summary, "Not Available")
+          end
+        end
         end
       rescue REXML::ParseException => error
         puts error
