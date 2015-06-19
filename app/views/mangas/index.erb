@@ -22,6 +22,7 @@
 	    <td><div class='image-container-search'><%= image_tag elem.image, class: 'image' %></div></td>
 			<% end %>
 	    <td class="name-table"><%= elem.name %></td>
+
 	    <td><%= link_to '', addcollection_user_manga_path(current_user.id, elem.id) , class: 'fa fa-plus-square-o fa-3x fa-collection', method: :post %></td>
 	  </tr>
 	  <% end %>
